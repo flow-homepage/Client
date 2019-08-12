@@ -19,8 +19,7 @@ chrome.runtime.onInstalled.addListener(function() {
         conditions: [
           new chrome.declarativeContent.PageStateMatcher({
             pageUrl: {
-              urlMatches:
-                'file:///C:/Users/CBrand/Desktop/Code/flow-homepage-client*'
+              hostEquals: 'localhost'
             }
           })
         ],
@@ -33,8 +32,11 @@ chrome.runtime.onInstalled.addListener(function() {
 // Add a listener on the message recieved event
 chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
   // Send back the sessions object containing all recently closed sessions to whomever sent the message
-  chrome.sessions.getRecentlyClosed(sessions => {
-    sendResponse(sessions);
-  });
+  if (request.recentlyClosed === 'true') {
+    chrome.sessions.getRecentlyClosed(sessions => {
+      sendResponse(sessions);
+    });
+  }
+
   return true;
 });
