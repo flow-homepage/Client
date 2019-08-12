@@ -31,7 +31,7 @@
   "options_page": "options.html",
   "content_scripts": [
     {
-      "matches": ["file:///C:/Users/CBrand/Desktop/Code/flow-homepage-client*"],
+      "matches": ["*://localhost/*"],
       "js": ["content.js"]
     }
   ],
