@@ -1,38 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Flow</title>
-</head>
-<body onload="getWeather()">
-  <div>
-    <h1 id="weather"></h1>
-  </div>
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Flow</title>
-    <script
-    src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.7.0/moment.min.js"
-      type="text/javascript"
-      ></script>
-      <script type="text/javascript">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.7.0/moment.min.js" type="text/javascript"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js" type="text/javascript"></script>
+    <script type="text/javascript">
       function updateTime() {
         // instantiate a moment object
-        var NowMoment = moment().format("MMMM Do YYYY, h:mm:ss a");
+        const NowMoment = moment().format("MMMM Do YYYY, h:mm:ss a");
         
         // instantiate a JavaScript Date object
         // var NowDate = new Date();
         
         // display value of moment object in #displayMoment div
-        var eDisplayMoment = document.getElementById("displayMoment");
+        const eDisplayMoment = document.getElementById("displayMoment");
         eDisplayMoment.innerHTML = NowMoment;
         
         // display value of Date object in #displayJsDate div
@@ -41,9 +25,8 @@
       }
       setInterval(updateTime, 1000);
       </script>
-      <script defer src="utils/weatherAPI.js"></script>
   </head>
-  <body onload="getWeather()">
+  <body>
       <header>
         <h1>
           Flow: A Better Homepage
@@ -56,8 +39,16 @@
           </h3>
         </header>
         <div id="displayMoment" style="text-align: center"></div>
-        <div>
-          <h1 id="weather"></h1>
-        </div>
+        <div id="weather" style="text-align: center"></div>
+        
+        <script type="text/javascript">
+          async function getWeather() {
+            const weatherDisplay = document.getElementById("weather");
+            const weather = await axios.get('http://localhost:5000/api/weather');
+            //console.log(weather.data.temperature);
+            weatherDisplay.innerHTML =  `${weather.data.temperature}°F`;
+      }
+      getWeather();
+        </script>
       </body>
 </html>
