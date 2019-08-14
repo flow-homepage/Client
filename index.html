@@ -5,26 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Flow</title>
+    <link rel="stylesheet" href="styles.css" />
     <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.7.0/moment.min.js" type="text/javascript"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js" type="text/javascript"></script>
-    <script type="text/javascript">
-      function updateTime() {
-        // instantiate a moment object
-        const NowMoment = moment().format("MMMM Do YYYY, h:mm:ss a");
-        
-        // instantiate a JavaScript Date object
-        // var NowDate = new Date();
-        
-        // display value of moment object in #displayMoment div
-        const eDisplayMoment = document.getElementById("displayMoment");
-        eDisplayMoment.innerHTML = NowMoment;
-        
-        // display value of Date object in #displayJsDate div
-        // var eDisplayDate = document.getElementById('displayJsDate');
-        // eDisplayDate.innerHTML = NowDate;
-      }
-      setInterval(updateTime, 1000);
-      </script>
   </head>
   <body>
       <header>
@@ -34,14 +17,20 @@
         <h2>
           Welcome to Our Site!
         </h2>
-        <h3 id="recentTabs" style="color:black; text-align:center">
-            CHROME EXTENSION REQUIRED
-          </h3>
         </header>
+     <main style="text-align: center">
+      <div id="recentTabs" class="recentTabs">
+        <a
+          href="https://chrome.google.com/webstore/detail/flow-homepage-helper/jadklcjnechlbblefifkjodppcbckmlg"
+        >
+          CHROME EXTENSION REQUIRED
+        </a>
+        
         <div id="displayMoment" style="text-align: center"></div>
         <div id="weather" style="text-align: center"></div>
-        
-        <script type="text/javascript">
+        </main>
+       <script src="time.js" type="text/javascript"></script>
+       <script type="text/javascript">
           async function getWeather() {
             const weatherDisplay = document.getElementById("weather");
             const weather = await axios.get('http://localhost:5000/api/weather');
