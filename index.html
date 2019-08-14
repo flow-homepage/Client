@@ -4,29 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Flow</title>
+    <link rel="stylesheet" href="styles.css" />
+    <title>Flow Homepage</title>
     <script
       src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.7.0/moment.min.js"
       type="text/javascript"
     ></script>
-    <script type="text/javascript">
-      function updateTime() {
-        // instantiate a moment object
-        var NowMoment = moment().format("MMMM Do YYYY, h:mm:ss a");
-
-        // instantiate a JavaScript Date object
-        // var NowDate = new Date();
-
-        // display value of moment object in #displayMoment div
-        var eDisplayMoment = document.getElementById("displayMoment");
-        eDisplayMoment.innerHTML = NowMoment;
-
-        // display value of Date object in #displayJsDate div
-        // var eDisplayDate = document.getElementById('displayJsDate');
-        // eDisplayDate.innerHTML = NowDate;
-      }
-      setInterval(updateTime, 1000);
-    </script>
   </head>
   <body>
     <header>
@@ -34,12 +17,19 @@
         Flow: A Better Homepage
       </h1>
       <h2>
-        Welcome to Our Site!
+        Welcome to our Site!
       </h2>
-      <h3 id="recentTabs" style="color:black; text-align:center">
-        CHROME EXTENSION REQUIRED
-      </h3>
     </header>
-    <div id="displayMoment" style="text-align: center"></div>
+    <main style="text-align: center">
+      <div id="recentTabs" class="recentTabs">
+        <a
+          href="https://chrome.google.com/webstore/detail/flow-homepage-helper/jadklcjnechlbblefifkjodppcbckmlg"
+        >
+          CHROME EXTENSION REQUIRED
+        </a>
+      </div>
+      <div id="displayMoment"></div>
+    </main>
+    <script src="time.js" type="text/javascript"></script>
   </body>
 </html>
