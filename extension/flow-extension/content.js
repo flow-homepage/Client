@@ -8,6 +8,10 @@ chrome.runtime.sendMessage({ recentlyClosed: 'true' }, function(sessions) {
   for (let i = 0; i < sessions.length; i++) {
     const page = sessions[i].tab || sessions[i].window;
     document.getElementById('recentTabs').innerHTML +=
-      '<div>' + page.title + '</div>';
+      `<a class="recentTab" title="${page.url}" href="${
+        page.url
+      }" target="_blank">` +
+      page.title +
+      `</a>`;
   }
 });

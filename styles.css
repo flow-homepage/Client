@@ -1,17 +1,46 @@
-.recentTabs {
-  margin: auto;
-  width: 50%;
-  min-height: 30vh;
-  border: 1px solid black;
-  border-radius: 10px;
-  margin-bottom: 25px;
+@import url('https://fonts.googleapis.com/css?family=Libre+Franklin&display=swap');
+
+html {
+  font-size: 1.25vw;
+  font-family: 'Libre Franklin', sans-serif;
+  background-color: hsl(28, 100%, 96%);
+  color: hsl(224, 43%, 25%);
 }
 
-.recentTabs > div {
+.recentTabs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  margin: auto;
   width: 50%;
+  height: 22rem;
+  border: 1px solid hsl(224, 43%, 25%);
+  border-radius: 10px;
+  margin-bottom: 25px;
+  overflow-y: scroll;
+  box-shadow: 0.5rem 0.5rem 0.5rem rgba(0, 0, 0, 0.4);
+  background-color: hsl(28, 100%, 98%);
+}
+
+.recentTabs > a.recentTab {
+  width: 40%;
   margin: 10px auto;
   padding: 5px;
-  border: 1px solid black;
+  border: 1px solid hsl(224, 43%, 25%);
   border-radius: 10px;
   overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  cursor: pointer;
+  transition: box-shadow 0.2s;
+  text-decoration: none;
+  color: hsl(224, 43%, 25%);
+  background-color: hsl(224, 43%, 98%);
+  height: 2rem;
+  padding: 1rem 1rem 0.25rem 1rem;
+}
+
+.recentTabs > a.recentTab:hover {
+  transition: box-shadow 0.2s;
+  box-shadow: 0.25rem 0.25rem 0.25rem rgba(0, 0, 0, 0.4);
 }
