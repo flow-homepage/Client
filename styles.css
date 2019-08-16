@@ -5,6 +5,12 @@ html {
   font-family: 'Libre Franklin', sans-serif;
   background-color: hsl(28, 100%, 96%);
   color: hsl(224, 43%, 25%);
+  background: linear-gradient(
+      rgba(255, 255, 255, 0.6),
+      rgba(255, 255, 255, 0.6)
+    ),
+    url(/img/background.jpg);
+  background-size: cover;
 }
 
 .recentTabs {
