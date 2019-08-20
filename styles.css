@@ -4,18 +4,17 @@
 html {
   font-size: 1.25vw;
   font-family: 'Nunito Sans', sans-serif;
-  background-color: hsl(28, 100%, 96%);
-  color: hsl(224, 43%, 25%);
-  background: linear-gradient(
-      rgba(255, 255, 255, 0.6),
-      rgba(255, 255, 255, 0.6)
-    ),
+  color: hsl(224, 43%, 90%);
+  background: linear-gradient(rgba(36, 51, 91, 0.5), rgba(36, 51, 91, 0.5)),
     url(/img/background.jpg);
   background-size: cover;
 }
 
+h1 {
+  padding-left: 0.5vw;
+}
 h2 {
-  padding: 2vh 0;
+  padding-bottom: 1vh;
 }
 
 .logoWithText {
@@ -36,34 +35,36 @@ h2 {
   margin: auto;
   padding: 2vh 0;
   width: 75vw;
-  height: 31vh;
+  height: 25vh;
   border-radius: 10px;
   margin-bottom: 25px;
   overflow-y: scroll;
   box-shadow: 0.5rem 0.5rem 0.5rem rgba(0, 0, 0, 0.4);
-  background-color: hsl(28, 100%, 98%);
+  background-color: hsl(224, 43%, 90%);
 }
 
 .recentTabs > a.recentTab {
   width: 10vw;
   height: 5vh;
-  border: 1px solid hsl(224, 43%, 25%);
   border-radius: 10px;
   margin-bottom: 2vh;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
   cursor: pointer;
-  transition: box-shadow 0.2s;
+  transition: border 0.2s;
   text-decoration: none;
   color: hsl(224, 43%, 25%);
-  background-color: hsl(224, 43%, 98%);
-  padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+  background-color: hsl(224, 43%, 96%);
+  padding: 0.5rem 0.5rem 0rem 0.5rem;
+  box-shadow: 0.25rem 0.25rem 0.25rem rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(0, 0, 0, 0);
 }
 
 .recentTabs > a.recentTab:hover {
-  transition: box-shadow 0.2s;
+  transition: border 0.2s;
   box-shadow: 0.25rem 0.25rem 0.25rem rgba(0, 0, 0, 0.4);
+  border: 1px solid hsl(224, 43%, 25%);
 }
 
 /* width */
@@ -75,13 +76,13 @@ h2 {
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: #f1f1f1;
+  background: hsl(224, 43%, 95%);
   border-radius: 10px;
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #888;
+  background: hsl(224, 43%, 25%);
   border-radius: 15px;
 }
 
