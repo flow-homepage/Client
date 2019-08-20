@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Nunito+Sans&display=swap');
+@import '/styles/resets.css';
 
 html {
   font-size: 1.25vw;
@@ -13,14 +14,29 @@ html {
   background-size: cover;
 }
 
+h2 {
+  padding: 2vh 0;
+}
+
+.logoWithText {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+}
+.logoImg {
+  height: 1rem;
+  width: 1rem;
+}
+
 .recentTabs {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
+  align-content: space-between;
   margin: auto;
-  width: 50%;
-  height: 22rem;
-  border: 1px solid hsl(224, 43%, 25%);
+  padding: 2vh 0;
+  width: 75vw;
+  height: 31vh;
   border-radius: 10px;
   margin-bottom: 25px;
   overflow-y: scroll;
@@ -29,11 +45,11 @@ html {
 }
 
 .recentTabs > a.recentTab {
-  width: 40%;
-  margin: 10px auto;
-  padding: 5px;
+  width: 10vw;
+  height: 5vh;
   border: 1px solid hsl(224, 43%, 25%);
   border-radius: 10px;
+  margin-bottom: 2vh;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
@@ -42,11 +58,34 @@ html {
   text-decoration: none;
   color: hsl(224, 43%, 25%);
   background-color: hsl(224, 43%, 98%);
-  height: 2rem;
-  padding: 1rem 1rem 0.25rem 1rem;
+  padding: 0.5rem 0.5rem 0.5rem 0.5rem;
 }
 
 .recentTabs > a.recentTab:hover {
   transition: box-shadow 0.2s;
   box-shadow: 0.25rem 0.25rem 0.25rem rgba(0, 0, 0, 0.4);
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 15px;
+  border-radius: 15px;
+  padding-right: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 15px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }

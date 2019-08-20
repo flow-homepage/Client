@@ -2,7 +2,7 @@
 
 function updateTime() {
   // instantiate a moment object
-  const NowMoment = moment().format('MMMM Do YYYY, h:mm:ss a');
+  const NowMoment = moment().format('h:mm:ss a [<br />] MMMM Do YYYY');
 
   // instantiate a JavaScript Date object
   // var NowDate = new Date();
