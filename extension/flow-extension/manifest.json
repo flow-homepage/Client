@@ -1,6 +1,6 @@
 {
   "name": "Flow Homepage Helper",
-  "version": "1.02",
+  "version": "1.03",
   "description": "Provides features for the Flow Homepage!",
   "permissions": [
     "activeTab",
