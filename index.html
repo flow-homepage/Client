@@ -17,23 +17,36 @@
   </head>
   <body>
     <header>
-      <h1>
-        Flow: A Better Homepage
-      </h1>
-    </header>
-    <main style="text-align: center">
-      <h2>
-        Recently Closed Tabs and Windows
-      </h2>
-      <div id="recentTabs" class="recentTabs">
-        <a
-          href="https://chrome.google.com/webstore/detail/flow-homepage-helper/jadklcjnechlbblefifkjodppcbckmlg"
-        >
-          CHROME EXTENSION REQUIRED
-        </a>
+      <div class="logoWithText">
+        <img
+          src="/img/flowlogo.png"
+          class="logoImg"
+          style="height: 48px;width:48px;"
+        />
+        <h1>
+          Flow
+        </h1>
       </div>
-      <div id="displayMoment" style="text-align: center"></div>
-      <div id="weather" style="text-align: center"></div>
+    </header>
+    <main
+      style="text-align: center; display: flex; justify-content: space-evenly; align-items: top;"
+    >
+      <section>
+        <h2>
+          Recently Closed Tabs
+        </h2>
+        <div id="recentTabs" class="recentTabs">
+          <a
+            href="https://chrome.google.com/webstore/detail/flow-homepage-helper/jadklcjnechlbblefifkjodppcbckmlg"
+          >
+            CHROME EXTENSION REQUIRED
+          </a>
+        </div>
+      </section>
+      <section>
+        <h1 id="displayMoment" style="text-align: center"></h1>
+        <h1 id="weather" style="text-align: center"></h1>
+      </section>
     </main>
   </body>
   <script src="time.js" type="text/javascript"></script>
