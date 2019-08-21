@@ -40,3 +40,13 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
 
   return true;
 });
+
+chrome.tabs.onRemoved.addListener(() => {
+  chrome.tabs.query({ url: '*://localhost/*' }, function(tabs) {
+    chrome.sessions.getRecentlyClosed(sessions => {
+      for (let i = 0; i < tabs.length; i++) {
+        chrome.tabs.sendMessage(tabs[i].id, { newClosed: 'true', sessions });
+      }
+    });
+  });
+});
