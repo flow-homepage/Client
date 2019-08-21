@@ -7,6 +7,11 @@ chrome.runtime.sendMessage({ recentlyClosed: 'true' }, function(sessions) {
   document.getElementById('recentTabs').innerHTML = '';
   for (let i = 0; i < sessions.length; i++) {
     const page = sessions[i].tab || sessions[i].window;
-    document.getElementById('recentTabs').innerHTML += page.title + '<br />';
+    document.getElementById('recentTabs').innerHTML +=
+      `<a class="recentTab" title="${page.url}" href="${
+        page.url
+      }" target="_blank">` +
+      page.title +
+      `</a>`;
   }
 });
