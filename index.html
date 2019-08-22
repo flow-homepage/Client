@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" id="page">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -10,9 +10,24 @@
       src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.7.0/moment.min.js"
       type="text/javascript"
     ></script>
-    <script src="https://unpkg.com/axios/dist/axios.min.js" type="text/javascript"></script>
+    <script
+      src="https://unpkg.com/axios/dist/axios.min.js"
+      type="text/javascript"
+    ></script>
+    <script type="text/javascript">
+      async function getBackground() {
+        const htmlBackground = document.getElementById("page");
+        const newImage = await axios.get(
+          "http://localhost:5000/api/background"
+        );
+        console.log(newImage.data);
+        htmlBackground.style.background = `linear-gradient(rgba(36, 51, 91, 0.5), rgba(36, 51, 91, 0.5)), url('${
+          newImage.data
+        }')`;
+      }
+    </script>
   </head>
-  <body>
+  <body onload="getBackground()">
     <header>
       <section class="logoWithText">
         <img src="/img/flowlogo.png" class="logoImg"" /> Flow
@@ -45,8 +60,8 @@
   <script src="time.js" type="text/javascript"></script>
   <script type="text/javascript">
     async function getWeather() {
-      const weatherDisplay = document.getElementById('weather');
-      const weather = await axios.get('http://localhost:5000/api/weather');
+      const weatherDisplay = document.getElementById("weather");
+      const weather = await axios.get("http://localhost:5000/api/weather");
       weatherDisplay.innerHTML = `${weather.data.temperature}°F`;
     }
     getWeather();
