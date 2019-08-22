@@ -10,23 +10,17 @@
       src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.7.0/moment.min.js"
       type="text/javascript"
     ></script>
-    <script
-      src="https://unpkg.com/axios/dist/axios.min.js"
-      type="text/javascript"
-    ></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js" type="text/javascript"></script>
   </head>
   <body>
     <header>
-      <div class="logoWithText">
-        <img
-          src="/img/flowlogo.png"
-          class="logoImg"
-          style="height: 48px;width:48px;"
-        />
-        <h1>
-          Flow
-        </h1>
-      </div>
+      <section class="logoWithText">
+        <img src="/img/flowlogo.png" class="logoImg"" /> Flow
+      </section>
+      <section>
+        <h1 id="displayMoment" style="text-align: center"></h1>
+        <h1 id="weather" style="text-align: center"></h1>
+      </section>
     </header>
     <main
       style="text-align: center; display: flex; justify-content: space-evenly; align-items: top;"
@@ -35,17 +29,16 @@
         <h2>
           Recently Closed Tabs
         </h2>
-        <div id="recentTabs" class="recentTabs">
-          <a
-            href="https://chrome.google.com/webstore/detail/flow-homepage-helper/jadklcjnechlbblefifkjodppcbckmlg"
-          >
-            CHROME EXTENSION REQUIRED
-          </a>
+        <div class="tabWidget">
+          <div id="recentTabs" class="recentTabs">
+            <a
+              href="https://chrome.google.com/webstore/detail/flow-homepage-helper/jadklcjnechlbblefifkjodppcbckmlg"
+            >
+              CHROME EXTENSION REQUIRED
+            </a>
+          </div>
+          <button id="expandButton" onclick="toggleExpand(false)"></button>
         </div>
-      </section>
-      <section>
-        <h1 id="displayMoment" style="text-align: center"></h1>
-        <h1 id="weather" style="text-align: center"></h1>
       </section>
     </main>
   </body>

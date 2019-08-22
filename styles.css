@@ -1,8 +1,9 @@
 @import url('https://fonts.googleapis.com/css?family=Nunito+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Marck+Script&display=swap');
 @import '/styles/resets.css';
 
 html {
-  font-size: 1.25vw;
+  font-size: 2.8vmin;
   font-family: 'Nunito Sans', sans-serif;
   color: hsl(224, 43%, 90%);
   background: linear-gradient(rgba(36, 51, 91, 0.5), rgba(36, 51, 91, 0.5)),
@@ -10,9 +11,12 @@ html {
   background-size: cover;
 }
 
-h1 {
-  padding-left: 0.5vw;
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: 2vh 1vw;
 }
+
 h2 {
   padding-bottom: 1vh;
 }
@@ -21,26 +25,64 @@ h2 {
   display: flex;
   justify-content: left;
   align-items: center;
+  font-size: 3rem;
+  font-weight: bold;
+  font-family: 'Marck Script', cursive;
 }
 .logoImg {
-  height: 1rem;
-  width: 1rem;
+  display: block;
+  width: 3rem;
+  height: auto;
+  border: solid 0.125rem hsl(224, 43%, 90%);
+  border-radius: 100rem;
+  margin-right: 0.5rem;
+  padding: 0.25rem;
+}
+
+.tabWidget {
+  display: flex;
+  justify-content: center;
+  align-content: flex-start;
+  align-items: flex-start;
+}
+
+.tabWidget button {
+  height: 3rem;
+  width: 3rem;
+  border: none;
+  background: url(/img/expand.png) no-repeat;
+  background-size: 100% 50%;
+  background-position: center;
+  margin-left: 1rem;
+  cursor: pointer;
+  outline: none;
+}
+.tabWidget button.expanded {
+  background: url(/img/collapse.png) no-repeat;
+  background-size: 100% 50%;
+  background-position: center;
 }
 
 .recentTabs {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
-  align-content: space-between;
+  align-content: flex-start;
   margin: auto;
-  padding-top: 2vh;
+  padding-top: 1vh;
   width: 75vw;
-  height: 25vh;
+  height: 8vh;
   border-radius: 10px;
-  margin-bottom: 25px;
-  overflow-y: scroll;
+  overflow-y: hidden;
   box-shadow: 0.5rem 0.5rem 0.5rem rgba(0, 0, 0, 0.4);
   background-color: hsl(224, 43%, 90%);
+  transition: height 0.5s;
+}
+
+.recentTabs.expanded {
+  overflow-y: scroll;
+  height: 27vh;
+  transition: height 0.5s;
 }
 
 .recentTabs > a.recentTab {
