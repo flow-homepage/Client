@@ -3,7 +3,7 @@
 @import '/styles/resets.css';
 
 html {
-  font-size: 3vmin;
+  font-size: 2.8vmin;
   font-family: 'Nunito Sans', sans-serif;
   color: hsl(224, 43%, 90%);
   background: linear-gradient(rgba(36, 51, 91, 0.5), rgba(36, 51, 91, 0.5)),
@@ -25,7 +25,7 @@ h2 {
   display: flex;
   justify-content: left;
   align-items: center;
-  font-size: 2.75rem;
+  font-size: 3rem;
   font-weight: bold;
   font-family: 'Marck Script', cursive;
 }
@@ -33,9 +33,9 @@ h2 {
   display: block;
   width: 3rem;
   height: auto;
-  border: solid 0.1rem hsl(224, 43%, 90%);
+  border: solid 0.125rem hsl(224, 43%, 90%);
   border-radius: 100rem;
-  margin-right: 0.5vw;
+  margin-right: 0.5rem;
   padding: 0.25rem;
 }
 
@@ -54,6 +54,8 @@ h2 {
   background-size: 100% 50%;
   background-position: center;
   margin-left: 1rem;
+  cursor: pointer;
+  outline: none;
 }
 .tabWidget button.expanded {
   background: url(/img/collapse.png) no-repeat;
