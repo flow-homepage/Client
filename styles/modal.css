@@ -61,6 +61,7 @@
 body button {
   border-radius: 100px;
   background: #fff;
+  display: inline-block;
   border: none;
   padding: 10px 30px;
   font-size: 14px;
