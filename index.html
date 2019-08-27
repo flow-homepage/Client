@@ -20,17 +20,14 @@
         const newImage = await axios.get(
           "http://localhost:5000/api/background"
         );
-        console.log(newImage.data);
-        htmlBackground.style.background = `linear-gradient(rgba(36, 51, 91, 0.5), rgba(36, 51, 91, 0.5)), url('${
-          newImage.data
-        }')`;
+        htmlBackground.style.background = `linear-gradient(rgba(36, 51, 91, 0.5), rgba(36, 51, 91, 0.5)), url('${newImage.data}')`;
       }
     </script>
   </head>
   <body onload="getBackground()">
     <header>
       <section class="logoWithText">
-        <img src="/img/flowlogo.png" class="logoImg"" /> Flow
+        <img src="./img/flowlogo.png" class="logoImg"" /> Flow
       </section>
       <section>
         <h1 id="displayMoment" style="text-align: center"></h1>
@@ -48,6 +45,7 @@
           <div id="recentTabs" class="recentTabs">
             <a
               href="https://chrome.google.com/webstore/detail/flow-homepage-helper/jadklcjnechlbblefifkjodppcbckmlg"
+              target="_blank"
             >
               CHROME EXTENSION REQUIRED
             </a>
