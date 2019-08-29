@@ -40,10 +40,19 @@ h2 {
 }
 
 .tabWidget {
-  display: flex;
-  justify-content: center;
-  align-content: flex-start;
-  align-items: flex-start;
+  display: grid;
+  place-content: center;
+  place-items: center;
+  grid-template-columns: 1fr auto;
+  grid-template-areas:
+    'title .'
+    'tabs button';
+  grid-column-gap: 1rem;
+  width: 75vw;
+}
+
+.tabWidget h2 {
+  grid-area: title;
 }
 
 .tabWidget button {
@@ -56,6 +65,8 @@ h2 {
   margin-left: 1rem;
   cursor: pointer;
   outline: none;
+  grid-area: button;
+  align-self: start;
 }
 .tabWidget button.expanded {
   background: url(/img/collapse.png) no-repeat;
@@ -70,13 +81,12 @@ h2 {
   align-content: flex-start;
   margin: auto;
   padding-top: 1vh;
-  width: 75vw;
   height: 8vh;
   border-radius: 10px;
   overflow-y: hidden;
-  box-shadow: 0.5rem 0.5rem 0.5rem rgba(0, 0, 0, 0.4);
-  background-color: hsl(224, 43%, 90%);
   transition: height 0.5s;
+  grid-area: tabs;
+  width: 100%;
 }
 
 .recentTabs.expanded {
@@ -86,10 +96,11 @@ h2 {
 }
 
 .recentTabs > a.recentTab {
-  width: 10vw;
+  width: 26%;
   height: 5vh;
   border-radius: 10px;
   margin-bottom: 2vh;
+  text-align: center;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
