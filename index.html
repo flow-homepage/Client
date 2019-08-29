@@ -36,16 +36,15 @@
         <h1 id="weather" style="text-align: center" onload="getWeather()"></h1>
       </section>
     </header>
-    <main
-      style="text-align: center; display: flex; justify-content: space-evenly; align-items: top;"
-    >
+    <main>
       <section>
-        <h2>
-          Recently Closed Tabs
-        </h2>
         <div class="tabWidget">
+          <h2>
+            Recently Closed Tabs
+          </h2>
           <div id="recentTabs" class="recentTabs">
             <a
+              target="_blank"
               href="https://chrome.google.com/webstore/detail/flow-homepage-helper/jadklcjnechlbblefifkjodppcbckmlg"
               target="_blank"
             >
@@ -56,5 +55,20 @@
         </div>
       </section>
     </main>
+    <footer>
+      <a class="footer" href="about.html">About</a>
+      <a class="footer" href="#">Contact Us</a>
+    </footer>
   </body>
+  <<<<<<< HEAD =======
+  <script src="time.js" type="text/javascript"></script>
+  <script type="text/javascript">
+    async function getWeather() {
+      const weatherDisplay = document.getElementById("weather");
+      const weather = await axios.get("http://localhost:5000/api/weather");
+      weatherDisplay.innerHTML = `${weather.data.temperature}°F`;
+    }
+    getWeather();
+  </script>
+  >>>>>>> Staging
 </html>
