@@ -1,13 +1,13 @@
-@import url('https://fonts.googleapis.com/css?family=Nunito+Sans&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Marck+Script&display=swap');
-@import '/styles/resets.css';
+@import url("https://fonts.googleapis.com/css?family=Nunito+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Marck+Script&display=swap");
+@import "./resets.css";
 
 html {
   font-size: 2.8vmin;
-  font-family: 'Nunito Sans', sans-serif;
+  font-family: "Nunito Sans", sans-serif;
   color: hsl(224, 43%, 90%);
   background: linear-gradient(rgba(36, 51, 91, 0.5), rgba(36, 51, 91, 0.5)),
-    url(/img/background.jpg);
+    url(../img/background.jpg);
   background-size: cover;
 }
 
@@ -19,15 +19,16 @@ header {
 
 h2 {
   padding-bottom: 1vh;
+  margin: 0;
 }
 
 .logoWithText {
   display: flex;
   justify-content: left;
-  align-items: center;
+  align-items: flex-start;
   font-size: 3rem;
   font-weight: bold;
-  font-family: 'Marck Script', cursive;
+  font-family: "Marck Script", cursive;
 }
 .logoImg {
   display: block;
@@ -59,7 +60,7 @@ h2 {
   height: 3rem;
   width: 3rem;
   border: none;
-  background: url(/img/expand.png) no-repeat;
+  background: url(../img/expand.png) no-repeat;
   background-size: 100% 50%;
   background-position: center;
   margin-left: 1rem;
@@ -69,7 +70,7 @@ h2 {
   align-self: start;
 }
 .tabWidget button.expanded {
-  background: url(/img/collapse.png) no-repeat;
+  background: url(../img/collapse.png) no-repeat;
   background-size: 100% 50%;
   background-position: center;
 }
@@ -118,6 +119,15 @@ h2 {
   transition: border 0.2s;
   box-shadow: 0.25rem 0.25rem 0.25rem rgba(0, 0, 0, 0.4);
   border: 1px solid hsl(224, 43%, 25%);
+}
+
+#weather {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+#displayMoment {
+  margin: 0;
 }
 
 /* width */
@@ -183,4 +193,10 @@ footer {
 .footer:hover {
   background-position: left bottom;
   transition: all 0.2s linear;
+}
+
+.contact a {
+  text-decoration: none;
+  outline: none;
+  color: hsl(224, 43%, 90%);
 }
