@@ -1,13 +1,13 @@
 @import url("https://fonts.googleapis.com/css?family=Nunito+Sans&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Marck+Script&display=swap");
-@import "./styles/resets.css";
+@import "./resets.css";
 
 html {
   font-size: 2.8vmin;
   font-family: "Nunito Sans", sans-serif;
   color: hsl(224, 43%, 90%);
   background: linear-gradient(rgba(36, 51, 91, 0.5), rgba(36, 51, 91, 0.5)),
-    url(./img/background.jpg);
+    url(../img/background.jpg);
   background-size: cover;
 }
 
@@ -51,7 +51,7 @@ h2 {
   height: 3rem;
   width: 3rem;
   border: none;
-  background: url(./img/expand.png) no-repeat;
+  background: url(../img/expand.png) no-repeat;
   background-size: 100% 50%;
   background-position: center;
   margin-left: 1rem;
@@ -59,7 +59,7 @@ h2 {
   outline: none;
 }
 .tabWidget button.expanded {
-  background: url(./img/collapse.png) no-repeat;
+  background: url(../img/collapse.png) no-repeat;
   background-size: 100% 50%;
   background-position: center;
 }
