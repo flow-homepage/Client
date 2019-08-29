@@ -173,3 +173,9 @@ footer {
   background-position: left bottom;
   transition: all 0.2s linear;
 }
+
+.contact a {
+  text-decoration: none;
+  outline: none;
+  color: hsl(224, 43%, 90%);
+}
