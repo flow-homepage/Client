@@ -10,7 +10,10 @@
       src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.7.0/moment.min.js"
       type="text/javascript"
     ></script>
-    <script src="https://unpkg.com/axios/dist/axios.min.js" type="text/javascript"></script>
+    <script
+      src="https://unpkg.com/axios/dist/axios.min.js"
+      type="text/javascript"
+    ></script>
   </head>
   <body>
     <header>
@@ -45,8 +48,8 @@
   <script src="time.js" type="text/javascript"></script>
   <script type="text/javascript">
     async function getWeather() {
-      const weatherDisplay = document.getElementById('weather');
-      const weather = await axios.get('http://localhost:5000/api/weather');
+      const weatherDisplay = document.getElementById("weather");
+      const weather = await axios.get("http://localhost:5000/api/weather");
       weatherDisplay.innerHTML = `${weather.data.temperature}°F`;
     }
     getWeather();

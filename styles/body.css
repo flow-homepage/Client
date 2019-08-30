@@ -1,14 +1,30 @@
+@import url("https://fonts.googleapis.com/css?family=Nunito&display=swap");
+
 body {
   background: #fff8f2;
   height: 100%;
   padding: 0px;
   margin: 0px;
-  font-family: sans-serif;
+}
+.intro {
+  font-family: "Nunito", sans-serif;
+  font-size: 20px;
   text-align: center;
   align-items: center;
   justify-content: center;
+  margin-bottom: 1rem;
 }
 
 .topbar {
-  justify-content: right;
+  font-family: "Nunito", sans-serif;
+  font-size: 20px;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  border: black;
+}
+
+.intro {
+  height: 10rem;
+  font-family: "Nunito", sans-serif;
 }

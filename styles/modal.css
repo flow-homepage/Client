@@ -1,6 +1,7 @@
 .modal-container {
   visibility: hidden;
   display: grid;
+  grid-auto-columns: 1fr;
   position: absolute;
   top: 0;
   left: 0;
@@ -23,12 +24,11 @@
 }
 .modal-container .modal {
   position: relative;
-  width: 900px;
-  height: 600px;
-  background: hsl(224, 43%, 25%);
+  background: #cc457d;
   border-radius: 5px;
   box-sizing: 0 3px 15px rgba(0, 0, 0, 0.5);
   display: grid;
+  grid-auto-columns: 1fr;
   justify-content: center;
   align-items: center;
   font-family: "Helvetica", "Segoe UI Light", sans-serif;
@@ -38,6 +38,8 @@
 }
 .modal-container .modal ul li {
   list-style: none;
+  padding: 10px;
+  font-size: 20px;
 }
 
 .modal-container .modal span.modal-exit {
@@ -49,11 +51,10 @@
 }
 .modal-container .modal-exit {
   cursor: pointer;
-  list-style: none;
 }
 
 .fade-in {
-  visibility: visible !important;
+  visibility: visible;
   z-index: 99;
   opacity: 1;
 }
