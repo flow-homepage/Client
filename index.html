@@ -16,15 +16,15 @@
     ></script>
     <!-- JS imports -->
     <script defer src="./jsFiles/time.js" type="text/javascript"></script>
-    <script defer src="./jsFiles/expand.js" type="type/javascript"></script>
+    <script defer src="./jsFiles/expand.js" type="text/javascript"></script>
     <!-- API imports -->
     <script
       src="./utils/weatherAPI.js"
       type="text/javascript"
       async="false"
     ></script>
-    <!-- Uncomment this to get background working -->
-    <!-- <script src="./utils/backgroundAPI.js" type="text/javascript" async="false"></script> -->
+    <!--  Uncomment this to get background working -->
+    <script src="./utils/backgroundAPI.js" type="text/javascript" async="false"></script>
   </head>
   <body>
     <header>
@@ -62,13 +62,6 @@
       <a class="footer" href="contact.html">Contact Us</a>
     </footer>
   </body>
-  <script src="time.js" type="text/javascript"></script>
-  <script type="text/javascript">
-    async function getWeather() {
-      const weatherDisplay = document.getElementById("weather");
-      const weather = await axios.get("http://localhost:5000/api/weather");
-      weatherDisplay.innerHTML = `${weather.data.temperature}°F`;
-    }
-    getWeather();
+
   </script>
 </html>
