@@ -1,45 +1,65 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" id="page">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Flow</title>
+    <link rel="stylesheet" href="./styles/styles.css" />
     <script
       src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.7.0/moment.min.js"
       type="text/javascript"
     ></script>
-    <script type="text/javascript">
-      function updateTime() {
-        // instantiate a moment object
-        var NowMoment = moment().format("MMMM Do YYYY, h:mm:ss a");
-
-        // instantiate a JavaScript Date object
-        // var NowDate = new Date();
-
-        // display value of moment object in #displayMoment div
-        var eDisplayMoment = document.getElementById("displayMoment");
-        eDisplayMoment.innerHTML = NowMoment;
-
-        // display value of Date object in #displayJsDate div
-        // var eDisplayDate = document.getElementById('displayJsDate');
-        // eDisplayDate.innerHTML = NowDate;
-      }
-      setInterval(updateTime, 1000);
-    </script>
+    <script
+      src="https://unpkg.com/axios/dist/axios.min.js"
+      type="text/javascript"
+    ></script>
+    <!-- JS imports -->
+    <script defer src="./jsFiles/time.js" type="text/javascript"></script>
+    <script defer src="./jsFiles/expand.js" type="text/javascript"></script>
+    <!-- API imports -->
+    <script
+      src="./utils/weatherAPI.js"
+      type="text/javascript"
+      async="false"
+    ></script>
+    <!--  Uncomment this to get background working -->
+    <script src="./utils/backgroundAPI.js" type="text/javascript" async="false"></script>
   </head>
   <body>
     <header>
-      <h1>
-        Flow: A Better Homepage
-      </h1>
-      <h2>
-        Welcome to Our Site!
-      </h2>
-      <h3 id="recentTabs" style="color:black; text-align:center">
-        CHROME EXTENSION REQUIRED
-      </h3>
+      <section class="logoWithText">
+        <img src="./img/flowlogo.png" class="logoImg"" /> Flow
+      </section>
+      <section>
+        <h1 id="displayMoment" style="text-align: center"></h1>
+        <h1 id="weather" style="text-align: center" onload="getWeather()"></h1>
+      </section>
     </header>
-    <div id="displayMoment" style="text-align: center"></div>
+    <main>
+      <section>
+        <div class="tabWidget">
+          <h2>
+            Recently Closed Tabs
+          </h2>
+          <div id="recentTabs" class="recentTabs">
+            <a
+              target="_blank"
+              href="https://chrome.google.com/webstore/detail/flow-homepage-helper/jadklcjnechlbblefifkjodppcbckmlg"
+              target="_blank"
+            >
+              CHROME EXTENSION REQUIRED
+            </a>
+          </div>
+          <button id="expandButton" onclick="toggleExpand(false)"></button>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <a class="footer" href="./pages/about.html">About</a>
+      <a class="footer" href="./pages/contact.html">Contact Us</a>
+    </footer>
   </body>
+
+  </script>
 </html>
