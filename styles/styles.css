@@ -9,6 +9,8 @@ html {
   background: linear-gradient(rgba(36, 51, 91, 0.5), rgba(36, 51, 91, 0.5)),
     url(../img/background.jpg);
   background-size: cover;
+  height: 100%;
+  overflow: hidden;
 }
 
 header {
@@ -46,8 +48,8 @@ h2 {
   place-items: center;
   grid-template-columns: 1fr auto;
   grid-template-areas:
-    'title .'
-    'tabs button';
+    "title ."
+    "tabs button";
   grid-column-gap: 1rem;
   width: 75vw;
 }
@@ -163,6 +165,15 @@ footer {
   padding: 5px;
 }
 
+footer #credits {
+  position: absolute;
+  bottom: 8px;
+  left: 16px;
+}
+footer #credits a {
+  text-decoration: none;
+}
+
 .footer {
   text-align: center;
   padding: 5px;
@@ -170,7 +181,9 @@ footer {
 
 /* footer link highlight */
 
-.footer:visited, .footer:active, .footer:link {
+.footer:visited,
+.footer:active,
+.footer:link {
   color: hsl(224, 43%, 90%);
   text-decoration: none;
 }
@@ -180,11 +193,7 @@ footer {
 }
 
 .footer {
-  background: linear-gradient(
-    to right,
-  goldenrod 50%,
-    transparent 50%
-  );
+  background: linear-gradient(to right, goldenrod 50%, transparent 50%);
   background-size: 200% 100%;
   background-position: right bottom;
   color: var(--snips-white);
