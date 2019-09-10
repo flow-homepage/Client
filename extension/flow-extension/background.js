@@ -19,12 +19,12 @@ chrome.runtime.onInstalled.addListener(function() {
         conditions: [
           new chrome.declarativeContent.PageStateMatcher({
             pageUrl: {
-              hostEquals: 'localhost'
-            }
-          })
+              hostEquals: 'flowhome'
+            },
+          }),
         ],
-        actions: [new chrome.declarativeContent.ShowPageAction()]
-      }
+        actions: [new chrome.declarativeContent.ShowPageAction()],
+      },
     ]);
   });
 });
@@ -42,7 +42,7 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
 });
 
 chrome.tabs.onRemoved.addListener(() => {
-  chrome.tabs.query({ url: '*://localhost/*' }, function(tabs) {
+  chrome.tabs.query({ url: '*://flowhome/*' }, function(tabs) {
     chrome.sessions.getRecentlyClosed(sessions => {
       for (let i = 0; i < tabs.length; i++) {
         chrome.tabs.sendMessage(tabs[i].id, { newClosed: 'true', sessions });
