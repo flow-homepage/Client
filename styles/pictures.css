@@ -1,9 +1,9 @@
 @import url("https://fonts.googleapis.com/css?family=Nunito&display=swap");
 
 #team {
-  margin-top: 5vh;
+  margin-top: 10vh;
   display: grid;
-  grid-template-columns: repeat(4, 18vw);
+  grid-template-columns: repeat(4, 20vw);
   place-content: space-evenly;
   place-items: center;
   grid-template-rows: 50vh;
