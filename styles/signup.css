@@ -17,9 +17,12 @@ body {
   padding: 10px 50px 50px;
 }
 
-h3 {
-  text-align: center;
-  margin-bottom: 50px;
+
+h3 { 
+  text-align: center; 
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+
 }
 
 /* form starting stylings ------------------------------- */
@@ -141,4 +144,23 @@ input:focus ~ .highlight {
     width: 0;
     background: transparent;
   }
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+button {
+  padding: 5px 10px;
+  font-size: 18px;
+  border-radius: 15px;
+  color: hsl(224, 43%, 25%);
+}
+
+button:hover {
+  cursor: pointer;
+  background-color: var(--work-orange);
+  color: var(--work-white);
 }
