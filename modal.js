@@ -10,10 +10,12 @@ function openAboutUs() {
     });
     document.querySelectorAll('.modal-exit').forEach(modalExit => {
       modalExit.addEventListener('click', () => {
+        console.log('is it getting the click?');
         document
           .querySelectorAll('.modal-container')
           .forEach(modalContainer => {
             modalContainer.classList.remove('fade-in');
+            console.log('test');
           });
       });
     });

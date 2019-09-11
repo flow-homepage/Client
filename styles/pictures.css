@@ -1,26 +1,49 @@
 @import url("https://fonts.googleapis.com/css?family=Nunito&display=swap");
 
 #team {
-  margin: 20px auto;
-  width: 400px;
-  height: 400px;
+  margin-top: 5vh;
   display: grid;
-  grid-template-columns: 200px 200px;
-  grid-row: auto auto;
-  grid-column-gap: 20px;
-  grid-row-gap: 20px;
-  padding: 20px;
+  grid-template-columns: repeat(4, 18vw);
+  place-content: space-evenly;
+  place-items: center;
+  grid-template-rows: 50vh;
 }
 .content {
+  display: none;
   list-style-type: none;
   background-color: hsl(224, 43%, 25%);
-  padding: 20px;
-  border-radius: 10px;
+  border-radius: 25px;
   color: #fff;
   display: grid;
-  align-items: center;
-  justify-content: center;
-  font-size: 1rem;
-  font-family: "Nunito", sans-serif;
-  grid-auto-rows: minmax(100px, auto);
+  align-items: start;
+  justify-content: stretch;
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+  border: 10px solid hsl(224, 43%, 25%);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.6);
+}
+.content:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.6);
+  cursor: pointer;
+}
+.ivy {
+  background: url(/img/ivyimg.png);
+  background-position: 40% 40%;
+  background-size: 200%;
+}
+.cody {
+  background: url(/img/codymain.jpg);
+  background-position: 55% 15%;
+  background-size: 225%;
+}
+.andre {
+  background: url(/img/andremain.jpg);
+  background-position: 43% 35%;
+  background-size: 160%;
+}
+.dean {
+  background: url(/img/deanmain.jpg);
+  background-position: 43% 50%;
+  background-size: 200%;
 }

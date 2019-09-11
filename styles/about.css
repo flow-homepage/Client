@@ -1,0 +1,8 @@
+@import "reset.css";
+@import "/styles.css";
+@import "/styles/pictures.css";
+@import "/styles/modal.css";
+
+.title {
+  text-align: center;
+}
