@@ -4,9 +4,9 @@
 
 /* basic stylings ------------------------------------------ */
 body {
-  display: flex;
+  display: grid;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
 }
 
 .container {

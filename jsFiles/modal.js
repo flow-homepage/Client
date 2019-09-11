@@ -1,13 +1,22 @@
 function openAboutUs() {
   document.addEventListener('DOMContentLoaded', () => {
-    document
-      .querySelector('.modal-button')
-      .addEventListener('click', function() {
-        document.querySelector('.modal-container').classList.add('fade-in');
+    const modalButtons = document.querySelectorAll('.modal-button');
+    console.log(modalButtons);
+    modalButtons.forEach((modalButton, i) => {
+      modalButton.addEventListener('click', () => {
+        const modalContainers = document.querySelectorAll('.modal-container');
+        modalContainers[i].classList.add('fade-in');
       });
-    document.querySelectorAll('.modal-exit').forEach(elem => {
-      elem.addEventListener('click', () => {
-        document.querySelector('.modal-container').classList.remove('fade-in');
+    });
+    document.querySelectorAll('.modal-exit').forEach(modalExit => {
+      modalExit.addEventListener('click', () => {
+        console.log('is it getting the click?');
+        document
+          .querySelectorAll('.modal-container')
+          .forEach(modalContainer => {
+            modalContainer.classList.remove('fade-in');
+            console.log('test');
+          });
       });
     });
   });

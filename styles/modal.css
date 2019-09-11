@@ -1,6 +1,6 @@
 .modal-container {
-  visibility: hidden;
-  display: grid;
+  display: none;
+  grid-auto-columns: 1fr;
   position: absolute;
   top: 0;
   left: 0;
@@ -11,7 +11,9 @@
   height: 100vh;
   transition: all 0.2s linear;
   opacity: 0;
+  cursor: pointer;
 }
+
 .modal-container .modal-overlay {
   position: fixed;
   top: 0;
@@ -23,21 +25,25 @@
 }
 .modal-container .modal {
   position: relative;
-  width: 900px;
-  height: 600px;
-  background: hsl(224, 43%, 25%);
-  border-radius: 5px;
+  background: #cc457d;
+  border-radius: 10px;
   box-sizing: 0 3px 15px rgba(0, 0, 0, 0.5);
   display: grid;
+  grid-auto-columns: 1fr;
   justify-content: center;
   align-items: center;
   font-family: "Helvetica", "Segoe UI Light", sans-serif;
   font-weight: lighter;
   text-align: center;
   list-style: none;
+  margin-left: 20vw;
+  margin-right: 20vw;
+  padding: 25px;
 }
 .modal-container .modal ul li {
   list-style: none;
+  padding: 10px;
+  font-size: 20px;
 }
 
 .modal-container .modal span.modal-exit {
@@ -49,23 +55,24 @@
 }
 .modal-container .modal-exit {
   cursor: pointer;
-  list-style: none;
 }
 
 .fade-in {
-  visibility: visible !important;
+  display: grid;
   z-index: 99;
   opacity: 1;
 }
 
-body button {
-  border-radius: 100px;
-  background: #fff;
+.cardTitle {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  background: hsl(224, 43%, 25%);
+  color: hsl(224, 43%, 90%);
   display: inline-block;
   border: none;
   padding: 10px 30px;
   font-size: 14px;
-  text-transform: uppercase;
-  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 5px -5px rgba(0, 0, 0, 0.9);
   cursor: pointer;
+  text-align: center;
 }
