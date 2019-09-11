@@ -1,13 +1,13 @@
-@import url('https://fonts.googleapis.com/css?family=Nunito+Sans&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Marck+Script&display=swap');
-@import '/styles/resets.css';
+@import url("https://fonts.googleapis.com/css?family=Nunito+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Marck+Script&display=swap");
+@import "./resets.css";
 
 html {
   font-size: 2.8vmin;
-  font-family: 'Nunito Sans', sans-serif;
+  font-family: "Nunito Sans", sans-serif;
   color: hsl(224, 43%, 90%);
   background: linear-gradient(rgba(36, 51, 91, 0.5), rgba(36, 51, 91, 0.5)),
-    url(/img/background.jpg);
+    url(../img/background.jpg);
   background-size: cover;
 }
 
@@ -19,15 +19,16 @@ header {
 
 h2 {
   padding-bottom: 1vh;
+  margin: 0;
 }
 
 .logoWithText {
   display: flex;
   justify-content: left;
-  align-items: center;
+  align-items: flex-start;
   font-size: 3rem;
   font-weight: bold;
-  font-family: 'Marck Script', cursive;
+  font-family: "Marck Script", cursive;
 }
 .logoImg {
   display: block;
@@ -40,25 +41,36 @@ h2 {
 }
 
 .tabWidget {
-  display: flex;
-  justify-content: center;
-  align-content: flex-start;
-  align-items: flex-start;
+  display: grid;
+  place-content: center;
+  place-items: center;
+  grid-template-columns: 1fr auto;
+  grid-template-areas:
+    'title .'
+    'tabs button';
+  grid-column-gap: 1rem;
+  width: 75vw;
+}
+
+.tabWidget h2 {
+  grid-area: title;
 }
 
 .tabWidget button {
   height: 3rem;
   width: 3rem;
   border: none;
-  background: url(/img/expand.png) no-repeat;
+  background: url(../img/expand.png) no-repeat;
   background-size: 100% 50%;
   background-position: center;
   margin-left: 1rem;
   cursor: pointer;
   outline: none;
+  grid-area: button;
+  align-self: start;
 }
 .tabWidget button.expanded {
-  background: url(/img/collapse.png) no-repeat;
+  background: url(../img/collapse.png) no-repeat;
   background-size: 100% 50%;
   background-position: center;
 }
@@ -70,13 +82,12 @@ h2 {
   align-content: flex-start;
   margin: auto;
   padding-top: 1vh;
-  width: 75vw;
   height: 8vh;
   border-radius: 10px;
   overflow-y: hidden;
-  box-shadow: 0.5rem 0.5rem 0.5rem rgba(0, 0, 0, 0.4);
-  background-color: hsl(224, 43%, 90%);
   transition: height 0.5s;
+  grid-area: tabs;
+  width: 100%;
 }
 
 .recentTabs.expanded {
@@ -86,10 +97,11 @@ h2 {
 }
 
 .recentTabs > a.recentTab {
-  width: 10vw;
+  width: 26%;
   height: 5vh;
   border-radius: 10px;
   margin-bottom: 2vh;
+  text-align: center;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
@@ -107,6 +119,15 @@ h2 {
   transition: border 0.2s;
   box-shadow: 0.25rem 0.25rem 0.25rem rgba(0, 0, 0, 0.4);
   border: 1px solid hsl(224, 43%, 25%);
+}
+
+#weather {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+#displayMoment {
+  margin: 0;
 }
 
 /* width */
@@ -131,4 +152,51 @@ h2 {
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: #555;
+}
+
+footer {
+  position: fixed;
+  bottom: 5px;
+  right: 5px;
+  text-align: right;
+  width: 100%;
+  padding: 5px;
+}
+
+.footer {
+  text-align: center;
+  padding: 5px;
+}
+
+/* footer link highlight */
+
+.footer:visited, .footer:active, .footer:link {
+  color: hsl(224, 43%, 90%);
+  text-decoration: none;
+}
+
+.footer:hover {
+  cursor: pointer;
+}
+
+.footer {
+  background: linear-gradient(
+    to right,
+  goldenrod 50%,
+    transparent 50%
+  );
+  background-size: 200% 100%;
+  background-position: right bottom;
+  color: var(--snips-white);
+  transition: all 0.2s linear;
+}
+.footer:hover {
+  background-position: left bottom;
+  transition: all 0.2s linear;
+}
+
+.contact a {
+  text-decoration: none;
+  outline: none;
+  color: hsl(224, 43%, 90%);
 }
