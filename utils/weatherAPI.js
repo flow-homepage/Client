@@ -1,5 +1,3 @@
-require('dotenv').config();
-
 async function getWeather() {
   const weatherDisplay = document.getElementById('weather');
   const weather = await axios.get(

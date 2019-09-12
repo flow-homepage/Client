@@ -1,5 +1,3 @@
-require('dotenv').config();
-
 async function getBackground() {
   const htmlBackground = document.getElementById('page');
   const photoCredits = document.getElementById('profileLink');
