@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Nunito+Sans&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Marck+Script&display=swap");
-@import "./resets.css";
+@import "./reset.css";
 @import "./variables.css";
 
 html {
