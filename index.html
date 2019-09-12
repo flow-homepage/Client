@@ -21,10 +21,14 @@
     <script
       src="./utils/weatherAPI.js"
       type="text/javascript"
-      async="false"
+      async="true"
     ></script>
     <!--  Uncomment this to get background working -->
-    <script src="./utils/backgroundAPI.js" type="text/javascript" async="false"></script>
+    <script
+      src="./utils/backgroundAPI.js"
+      type="text/javascript"
+      async="true"
+    ></script>
   </head>
   <body>
     <header>
@@ -56,10 +60,18 @@
       </section>
     </main>
     <footer>
+      <section id="credits">
+        <div>
+          Photo By: <a id="profileLink" href="#" target="_blank"></a> on
+          <a id="Unsplash" href="https://unsplash.com/" target="_blank"
+            >Unsplash</a
+          >
+        </div>
+      </section>
+      <a class="footer" href="./pages/signup.html">Sign Up</a>
+      <a class="footer" href="./pages/login.html">Login</a>
       <a class="footer" href="./pages/about.html">About</a>
       <a class="footer" href="./pages/contact.html">Contact Us</a>
     </footer>
   </body>
-
-  </script>
 </html>

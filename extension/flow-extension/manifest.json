@@ -31,7 +31,7 @@
   "options_page": "options.html",
   "content_scripts": [
     {
-      "matches": ["*://localhost/*"],
+      "matches": ["*://*.flowhome.us/*", "*://localhost/*"],
       "js": ["content.js"]
     }
   ],
