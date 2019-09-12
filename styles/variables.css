@@ -1,0 +1,12 @@
+:root {
+  --work-peach: hsl(25, 100%, 85%); 
+  --work-magenta: hsl(335, 57%, 54%);
+  --work-orange: hsl(5, 100%, 77%); 
+  --work-white: hsl(28, 100%, 97%); 
+  --work-blue: hsl(224, 43%, 31%);
+  --leisure-tan: hsl(41, 89%, 89%); 
+  --leisure-pink: hsl(358, 93%, 84%);
+  --leisure-gray: hsl(204, 13%, 40%);
+  --leisure-red: hsl(357, 94%, 60%);
+  --leisure-blue: hsl(207, 58%, 68%);
+}

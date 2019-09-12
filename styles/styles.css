@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css?family=Nunito+Sans&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Marck+Script&display=swap");
 @import "./resets.css";
+@import "./variables.css";
 
 html {
   font-size: 2.8vmin;
@@ -193,7 +194,11 @@ footer #credits a {
 }
 
 .footer {
-  background: linear-gradient(to right, goldenrod 50%, transparent 50%);
+  background: linear-gradient(
+    to right,
+    var(--work-orange) 45%,
+    transparent 50%
+  );
   background-size: 200% 100%;
   background-position: right bottom;
   color: var(--snips-white);
