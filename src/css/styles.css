@@ -8,7 +8,7 @@ html {
   font-family: "Nunito Sans", sans-serif;
   color: hsl(224, 43%, 90%);
   background: linear-gradient(rgba(36, 51, 91, 0.5), rgba(36, 51, 91, 0.5)),
-    url(../img/background.jpg);
+    url(/img/background.jpg);
   background-size: cover;
   height: 100%;
   overflow: hidden;
@@ -63,7 +63,7 @@ h2 {
   height: 3rem;
   width: 3rem;
   border: none;
-  background: url(../img/expand.png) no-repeat;
+  background: url(/img/expand.png) no-repeat;
   background-size: 100% 50%;
   background-position: center;
   margin-left: 1rem;
@@ -73,12 +73,12 @@ h2 {
   align-self: start;
 }
 .tabWidget button.expanded {
-  background: url(../img/collapse.png) no-repeat;
+  background: url(/img/collapse.png) no-repeat;
   background-size: 100% 50%;
   background-position: center;
 }
 
-.recentTabs {
+#recentTabs {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
@@ -93,13 +93,13 @@ h2 {
   width: 100%;
 }
 
-.recentTabs.expanded {
+#recentTabs.expanded {
   overflow-y: scroll;
   height: 60vh;
   transition: height 0.5s;
 }
 
-.recentTabs > a.recentTab {
+#recentTabs > a#recentTab {
   width: 26%;
   height: 5vh;
   border-radius: 10px;
@@ -118,7 +118,7 @@ h2 {
   border: 1px solid rgba(0, 0, 0, 0);
 }
 
-.recentTabs > a.recentTab:hover {
+#recentTabs > a#recentTab:hover {
   transition: border 0.2s;
   box-shadow: 0.25rem 0.25rem 0.25rem rgba(0, 0, 0, 0.4);
   border: 1px solid hsl(224, 43%, 25%);
