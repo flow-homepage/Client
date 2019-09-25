@@ -3,6 +3,7 @@ import './css/styles.css';
 import MomentTime from './components/MomentTime';
 import Weather from './components/Weather';
 import BrowserHistory from './components/BrowserHistory';
+import Footer from './components/Footer';
 
 class App extends Component {
   render() {
@@ -18,20 +19,7 @@ class App extends Component {
           </section>
         </header>
         <BrowserHistory />
-        <footer>
-          <a className="footer" href="./pages/signup.html">
-            Sign Up
-          </a>
-          <a className="footer" href="./pages/login.html">
-            Login
-          </a>
-          <a className="footer" href="./pages/about.html">
-            About
-          </a>
-          <a className="footer" href="contact.html">
-            Contact Us
-          </a>
-        </footer>
+        <Footer />
       </React.Fragment>
     );
   }
