@@ -1,9 +1,10 @@
-import React, { Component } from 'react';
-import './css/styles.css';
-import MomentTime from './components/MomentTime';
-import Weather from './components/Weather';
-import BrowserHistory from './components/BrowserHistory';
-import Footer from './components/Footer';
+import React, { Component } from "react";
+import "./css/styles.css";
+import MomentTime from "./components/MomentTime";
+import Weather from "./components/Weather";
+import BrowserHistory from "./components/BrowserHistory";
+import Footer from "./components/Footer";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 class App extends Component {
   render() {
@@ -19,7 +20,9 @@ class App extends Component {
           </section>
         </header>
         <BrowserHistory />
-        <Footer />
+        <Router>
+          <Footer />
+        </Router>
       </React.Fragment>
     );
   }
