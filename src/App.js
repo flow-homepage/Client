@@ -7,7 +7,34 @@ import Footer from "./components/Footer";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      lat: 34.0522,
+      lng: -118.2436,
+    };
+  }
+  
+  componentDidMount() {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(this.displayLocationInfo);
+    } else {
+      // error
+      // request location here
+    }
+  }
+  
+  displayLocationInfo = (position) => {
+    const lng = position.coords.longitude;
+    const lat = position.coords.latitude;
+    this.setState({
+      lat,
+      lng
+    });
+  }
+
   render() {
+    const { lat, lng } = this.state;
     return (
       <React.Fragment>
         <header>
@@ -16,7 +43,7 @@ class App extends Component {
           </section>
           <section>
             <MomentTime />
-            <Weather />
+            <Weather lat={lat} lng={lng} />
           </section>
         </header>
         <BrowserHistory />

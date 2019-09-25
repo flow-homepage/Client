@@ -17,7 +17,10 @@ export default class Weather extends Component {
    */
   async componentDidMount() {
     const res = await axios.get(
-      `https://flowhome-server.herokuapp.com/api/weather`
+      `https://flowhome-server.herokuapp.com/api/weather`, {params: {
+        lat: this.props.lat,
+        lng: this.props.lng
+      } }
     );
     // console.log(res);
     this.setState({
