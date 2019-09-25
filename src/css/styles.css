@@ -39,7 +39,7 @@ h2 {
   height: auto;
   border: solid 0.125rem hsl(224, 43%, 90%);
   border-radius: 100rem;
-  margin-right: 0.5rem;
+  margin: 0.5rem;
   padding: 0.25rem;
 }
 
@@ -99,7 +99,7 @@ h2 {
   transition: height 0.5s;
 }
 
-#recentTabs > a#recentTab {
+#recentTabs > a.recentTab {
   width: 26%;
   height: 5vh;
   border-radius: 10px;
@@ -118,7 +118,7 @@ h2 {
   border: 1px solid rgba(0, 0, 0, 0);
 }
 
-#recentTabs > a#recentTab:hover {
+#recentTabs > a.recentTab:hover {
   transition: border 0.2s;
   box-shadow: 0.25rem 0.25rem 0.25rem rgba(0, 0, 0, 0.4);
   border: 1px solid hsl(224, 43%, 25%);
