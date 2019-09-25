@@ -1,19 +1,14 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+import React, { Component } from "react";
+import PropTypes from "prop-types";
 
 export default class About extends Component {
   static propTypes = {
-    prop: PropTypes,
+    prop: PropTypes
   };
 
   render() {
     return (
       <>
-        <header>
-          <section className="logoWithText">
-            <img src="/img/flowlogo.png" alt="" className="logoImg" /> Flow
-          </section>
-        </header>
         <main>
           <h1 className="title">Meet the Devs!</h1>
           <div id="team">

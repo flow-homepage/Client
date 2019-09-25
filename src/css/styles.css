@@ -2,6 +2,7 @@
 @import url("https://fonts.googleapis.com/css?family=Marck+Script&display=swap");
 @import "./reset.css";
 @import "./variables.css";
+@import "./modal.css";
 
 html {
   font-size: 2.8vmin;
