@@ -1,0 +1,216 @@
+@import url("https://fonts.googleapis.com/css?family=Nunito+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Marck+Script&display=swap");
+@import "./reset.css";
+@import "./variables.css";
+
+html {
+  font-size: 2.8vmin;
+  font-family: "Nunito Sans", sans-serif;
+  color: hsl(224, 43%, 90%);
+  background: linear-gradient(rgba(36, 51, 91, 0.5), rgba(36, 51, 91, 0.5)),
+    url(/img/background.jpg);
+  background-size: cover;
+  height: 100%;
+  overflow: hidden;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: 2vh 1vw;
+}
+
+h2 {
+  padding-bottom: 1vh;
+  margin: 0;
+}
+
+.logoWithText {
+  display: flex;
+  justify-content: left;
+  align-items: flex-start;
+  font-size: 3rem;
+  font-weight: bold;
+  font-family: "Marck Script", cursive;
+}
+.logoImg {
+  display: block;
+  width: 3rem;
+  height: auto;
+  border: solid 0.125rem hsl(224, 43%, 90%);
+  border-radius: 100rem;
+  margin: 0.5rem;
+  padding: 0.25rem;
+}
+
+.tabWidget {
+  display: grid;
+  place-content: center;
+  place-items: center;
+  grid-template-columns: 1fr auto;
+  grid-template-areas:
+    "title ."
+    "tabs button";
+  grid-column-gap: 1rem;
+  width: 95vw;
+}
+
+.tabWidget h2 {
+  grid-area: title;
+}
+
+.tabWidget button {
+  height: 3rem;
+  width: 3rem;
+  border: none;
+  background: url(/img/expand.png) no-repeat;
+  background-size: 100% 50%;
+  background-position: center;
+  margin-left: 1rem;
+  cursor: pointer;
+  outline: none;
+  grid-area: button;
+  align-self: start;
+}
+.tabWidget button.expanded {
+  background: url(/img/collapse.png) no-repeat;
+  background-size: 100% 50%;
+  background-position: center;
+}
+
+#recentTabs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-content: flex-start;
+  margin: auto;
+  padding-top: 1vh;
+  height: 8vh;
+  border-radius: 10px;
+  overflow-y: hidden;
+  transition: height 0.5s;
+  grid-area: tabs;
+  width: 100%;
+}
+
+#recentTabs.expanded {
+  overflow-y: scroll;
+  height: 60vh;
+  transition: height 0.5s;
+}
+
+#recentTabs > a.recentTab {
+  width: 26%;
+  height: 5vh;
+  border-radius: 10px;
+  margin-bottom: 2vh;
+  text-align: center;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  cursor: pointer;
+  transition: border 0.2s;
+  text-decoration: none;
+  color: hsl(224, 43%, 25%);
+  background-color: hsl(224, 43%, 96%);
+  padding: 0.5rem 0.5rem 0rem 0.5rem;
+  box-shadow: 0.25rem 0.25rem 0.25rem rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(0, 0, 0, 0);
+}
+
+#recentTabs > a.recentTab:hover {
+  transition: border 0.2s;
+  box-shadow: 0.25rem 0.25rem 0.25rem rgba(0, 0, 0, 0.4);
+  border: 1px solid hsl(224, 43%, 25%);
+}
+
+#weather {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+#displayMoment {
+  margin: 0;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 15px;
+  border-radius: 15px;
+  padding-right: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: hsl(224, 43%, 95%);
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: hsl(224, 43%, 25%);
+  border-radius: 15px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+footer {
+  position: fixed;
+  bottom: 5px;
+  right: 5px;
+  text-align: right;
+  width: 100%;
+  padding: 5px;
+}
+
+footer #credits {
+  position: absolute;
+  bottom: 8px;
+  left: 16px;
+}
+footer #credits a {
+  text-decoration: none;
+}
+
+.footer {
+  text-align: center;
+  padding: 5px;
+}
+
+/* footer link highlight */
+
+.footer:visited,
+.footer:active,
+.footer:link {
+  color: hsl(224, 43%, 90%);
+  text-decoration: none;
+}
+
+.footer:hover {
+  cursor: pointer;
+}
+
+.footer {
+  background: linear-gradient(
+    to right,
+    var(--work-orange) 45%,
+    transparent 50%
+  );
+  background-size: 200% 100%;
+  background-position: right bottom;
+  color: var(--snips-white);
+  transition: all 0.2s linear;
+}
+.footer:hover {
+  background-position: left bottom;
+  transition: all 0.2s linear;
+}
+
+.contact a {
+  text-decoration: none;
+  outline: none;
+  color: hsl(224, 43%, 90%);
+}
