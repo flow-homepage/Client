@@ -17,7 +17,7 @@ export default class Background extends Component {
     );
 
     this.setState({
-      background: res.data.full,
+      background: res.data,
     });
   }
   render() {
