@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
+import Swal from 'sweetalert2';
 import './css/styles.css';
 import MomentTime from './components/MomentTime';
 import Weather from './components/Weather';
 import BrowserHistory from './components/BrowserHistory';
+import LocationModal from './components/LocationModal';
 
 class App extends Component {
   constructor(props) {
@@ -10,16 +12,17 @@ class App extends Component {
     this.state = {
       lat: 34.0522,
       lng: -118.2436,
+      toggleLocation: false,
     };
   }
   
-  componentDidMount() {
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(this.displayLocationInfo);
-    } else {
-      // error
-      // request location here
-    }
+
+
+  getCurrentPosition = () => {
+    const position = navigator.geolocation.getCurrentPosition(this.displayLocationInfo);
+    setTimeout(() => {
+      navigator.geolocation.clearWatch(position);
+    }, 10000);
   }
   
   displayLocationInfo = (position) => {
@@ -31,8 +34,14 @@ class App extends Component {
     });
   }
 
+  toggleLocation = () => {
+    this.setState(state => ({
+      toggleLocation: !state.toggleLocation,
+    }));
+  }
+
   render() {
-    const { lat, lng } = this.state;
+    const { lat, lng, toggleLocation } = this.state;
     return (
       <React.Fragment>
         <header>
@@ -42,8 +51,10 @@ class App extends Component {
           <section>
             <MomentTime />
             <Weather lat={lat} lng={lng} />
+            <button onClick={this.toggleLocation}>🌐</button>
           </section>
         </header>
+        { toggleLocation ? <LocationModal getCurrentPosition={this.getCurrentPosition} displayLocationInfo={this.displayLocationInfo} /> : ''}
         <BrowserHistory />
         <footer>
           <a className="footer" href="./pages/signup.html">

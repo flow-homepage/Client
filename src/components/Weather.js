@@ -1,8 +1,12 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import PropTypes from 'prop-types';
 
 export default class Weather extends Component {
-  static propTypes = {};
+  static propTypes = {
+    lat: PropTypes.number,
+    lng: PropTypes.number
+  };
   constructor(props) {
     super(props);
 
@@ -16,13 +20,15 @@ export default class Weather extends Component {
    * and sets it on our front end
    */
   async componentDidMount() {
+    const { lat, lng } = this.props;
     const res = await axios.get(
-      `https://flowhome-server.herokuapp.com/api/weather`, {params: {
-        lat: this.props.lat,
-        lng: this.props.lng
-      } }
+      `https://flowhome-server.herokuapp.com/api/weather`, { 
+        params: {
+          lat,
+          lng
+        }
+      }
     );
-    // console.log(res);
     this.setState({
       weather: `${res.data.temperature}°F`,
       summary: res.data.summary,
