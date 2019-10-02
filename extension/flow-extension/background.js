@@ -20,16 +20,16 @@ chrome.runtime.onInstalled.addListener(function() {
           new chrome.declarativeContent.PageStateMatcher({
             pageUrl: {
               hostSuffix: 'flowhome.us'
-            },
+            }
           }),
           new chrome.declarativeContent.PageStateMatcher({
             pageUrl: {
               hostSuffix: 'localhost'
-            },
-          }),
+            }
+          })
         ],
-        actions: [new chrome.declarativeContent.ShowPageAction()],
-      },
+        actions: [new chrome.declarativeContent.ShowPageAction()]
+      }
     ]);
   });
 });
@@ -39,7 +39,8 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
   // Send back the sessions object containing all recently closed sessions to whomever sent the message
   if (request.recentlyClosed === 'true') {
     chrome.sessions.getRecentlyClosed(sessions => {
-      sendResponse(sessions);
+      const tabs = getTabsFromSessions(sessions);
+      sendResponse(tabs);
     });
   }
 
@@ -52,9 +53,40 @@ chrome.tabs.onRemoved.addListener(() => {
     function(tabs) {
       chrome.sessions.getRecentlyClosed(sessions => {
         for (let i = 0; i < tabs.length; i++) {
-          chrome.tabs.sendMessage(tabs[i].id, { newClosed: 'true', sessions });
+          const flowTabs = getTabsFromSessions(sessions);
+          chrome.tabs.sendMessage(tabs[i].id, {
+            newClosed: 'true',
+            tabs: flowTabs
+          });
         }
       });
     }
   );
 });
+
+function getTabsFromSessions(sessions) {
+  let tabs = {};
+  chrome.storage.sync.get(['flowTabs'], function(result) {
+    if (result) {
+      tabs = result;
+    }
+  });
+
+  // loop over every session
+  for (let i = 0; i < sessions.length; i++) {
+    const { tab, window } = sessions[i];
+    if (tab) {
+      tabs[tab.url] = tab;
+    } else {
+      // if the session was a window, loop over every tab in the window
+      for (let j = 0; j < window.tabs.length; j++) {
+        const windowTab = window.tabs[j];
+        tabs[windowTab.url] = windowTab;
+      }
+    }
+  }
+
+  chrome.storage.sync.set({ flowTabs: tabs });
+
+  return tabs;
+}
