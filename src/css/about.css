@@ -1,16 +1,9 @@
-@import "./reset.css";
-@import "./styles.css";
-@import "./pictures.css";
-@import "./modal.css";
+@import "reset.css";
+@import "/styles/styles.css";
+@import "/styles/pictures.css";
+@import "/styles/modal.css";
+@import "/styles/signup.css";
 
 .title {
   text-align: center;
-}
-
-.modal ul li {
-  text-align: center;
-}
-a {
-  text-decoration: none;
-  color: hsl(224, 43%, 90%);
 }
