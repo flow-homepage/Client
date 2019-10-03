@@ -41,6 +41,7 @@ class App extends Component {
     return (
       <>
         <Router>
+          <Background />
           <Header />
           <section>
             <MomentTime />
@@ -54,7 +55,6 @@ class App extends Component {
             <Route path="/about" exact component={About} />
             <Route path="/contact" exact component={About} />
           </Switch>
-          <Background />
         </Router>
       </>
     );
