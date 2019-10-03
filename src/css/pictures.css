@@ -30,21 +30,20 @@
 .ivy {
   background: url(/img/ivyimg.png);
   background-position: 40% 40%;
-  background-size: 15rem;
+  background-size: 16rem;
 }
 .cody {
   background: url(/img/codymain.jpg);
   background-position: 55% 15%;
-  background-size: 15rem;
+  background-size: 16rem;
 }
 .andre {
   background: url(/img/andremain.jpg);
   background-position: 43% 35%;
-  background-size: 15rem;
+  background-size: 16rem;
 }
 .dean {
   background: url(/img/deanmain.jpg);
   background-position: 43% 50%;
-  background-size: 15rem;
-  height: 100%;
+  background-size: 16rem;
 }
