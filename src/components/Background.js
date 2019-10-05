@@ -7,8 +7,7 @@ export default class Background extends Component {
     super(props);
     this.rootRef = React.createRef();
     this.state = {
-      background: [],
-      maker: '',
+      // background: [],
     };
   }
 
@@ -32,10 +31,6 @@ export default class Background extends Component {
     // });
   }
   render() {
-    return (
-      <div ref={this.rootRef} className="bg">
-        <h1 className="title">Hello</h1>
-      </div>
-    );
+    return <div ref={this.rootRef} className="bg" />;
   }
 }
