@@ -1,19 +1,20 @@
-import React, { Component } from "react";
-import "./css/styles.css";
-import MomentTime from "./components/MomentTime";
-import Weather from "./components/Weather";
-import Footer from "./components/Footer";
-import About from "./components/About";
-import Header from "./components/Header";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Home from "./components/Home";
+import React, { Component } from 'react';
+import './css/styles.css';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import MomentTime from './components/MomentTime';
+import Weather from './components/Weather';
+import Footer from './components/Footer';
+import About from './components/About';
+import Header from './components/Header';
+import Home from './components/Home';
+import Background from './components/Background';
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
       lat: 34.0522,
-      lng: -118.2436
+      lng: -118.2436,
     };
   }
 
@@ -31,7 +32,7 @@ class App extends Component {
     const lat = position.coords.latitude;
     this.setState({
       lat,
-      lng
+      lng,
     });
   };
 
@@ -53,6 +54,7 @@ class App extends Component {
             <Route path="/about" exact component={About} />
             <Route path="/contact" exact component={About} />
           </Switch>
+          <Background />
         </Router>
       </>
     );
