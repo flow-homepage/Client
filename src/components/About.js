@@ -4,11 +4,10 @@ import Andre from "./Modals/Andre";
 import Cody from "./Modals/Cody";
 import Dean from "./Modals/Dean";
 export default class About extends Component {
-  // andre please be careful about which branch you push into
   constructor(props) {
     super(props);
     this.state = {
-      ivy: true,
+      ivy: false,
       cody: false,
       andre: false,
       dean: false
