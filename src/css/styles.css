@@ -3,6 +3,8 @@
 @import "./reset.css";
 @import "./variables.css";
 @import "./modal.css";
+@import "./about.css";
+@import "./pictures.css";
 
 html {
   font-size: 2.8vmin;
