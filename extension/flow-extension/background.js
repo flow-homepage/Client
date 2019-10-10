@@ -37,10 +37,11 @@ chrome.runtime.onInstalled.addListener(function() {
 // Add a listener on the message recieved event
 chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
   // Send back the sessions object containing all recently closed sessions to whomever sent the message
-  if (request.recentlyClosed === 'true') {
+  if (request.recentlyClosed) {
     chrome.sessions.getRecentlyClosed(sessions => {
-      const tabs = getTabsFromSessions(sessions);
-      sendResponse(tabs);
+      getTabsFromSessions(sessions, tabs => {
+        sendResponse(tabs);
+      });
     });
   }
 
@@ -51,42 +52,61 @@ chrome.tabs.onRemoved.addListener(() => {
   chrome.tabs.query(
     { url: ['*://*.flowhome.us/*', '*://localhost/*'] },
     function(tabs) {
-      chrome.sessions.getRecentlyClosed(sessions => {
-        for (let i = 0; i < tabs.length; i++) {
-          const flowTabs = getTabsFromSessions(sessions);
-          chrome.tabs.sendMessage(tabs[i].id, {
-            newClosed: 'true',
-            tabs: flowTabs
-          });
-        }
-      });
+      for (let i = 0; i < tabs.length; i++) {
+        chrome.tabs.sendMessage(tabs[i].id, {
+          newClosed: 'true'
+        });
+      }
     }
   );
 });
 
-function getTabsFromSessions(sessions) {
+function getTabsFromSessions(sessions, callback) {
+  let categoryName = 'Default';
   let tabs = {};
-  chrome.storage.sync.get(['flowTabs'], function(result) {
-    if (result) {
-      tabs = result;
-    }
-  });
 
-  // loop over every session
-  for (let i = 0; i < sessions.length; i++) {
-    const { tab, window } = sessions[i];
-    if (tab) {
-      tabs[tab.url] = tab;
-    } else {
-      // if the session was a window, loop over every tab in the window
-      for (let j = 0; j < window.tabs.length; j++) {
-        const windowTab = window.tabs[j];
-        tabs[windowTab.url] = windowTab;
+  chrome.storage.sync.get(['flowTabs'], function(tabResult) {
+    if (tabResult.flowTabs) {
+      tabs = tabResult.flowTabs;
+    }
+
+    chrome.storage.local.get(['category'], function(categoryResult) {
+      if (categoryResult.category) {
+        categoryName = categoryResult.category.name;
       }
-    }
-  }
 
-  chrome.storage.sync.set({ flowTabs: tabs });
+      // loop over every session
+      for (let i = 0; i < sessions.length; i++) {
+        let { tab, window } = sessions[i];
+        tab = Object.assign({}, tab);
+        window = Object.assign({}, window);
+        if (tab) {
+          tab.time = sessions[i].lastModified;
+          tab.category = categoryName;
+          tabs[tab.url] = tab;
+        } else {
+          // if the session was a window, loop over every tab in the window
+          for (let j = 0; j < window.tabs.length; j++) {
+            const windowTab = window.tabs[j];
+            windowTab.time = sessions[i].lastModified;
+            windowTab.category = categoryName;
+            tabs[windowTab.url] = windowTab;
+          }
+        }
+      }
 
-  return tabs;
+      chrome.storage.sync.set({ flowTabs: tabs });
+
+      const sortedTabs = [];
+      Object.keys(tabs).forEach(function(key, index) {
+        sortedTabs.push(tabs[key]);
+      });
+
+      sortedTabs.sort(function(a, b) {
+        return b.time - a.time;
+      });
+
+      callback(sortedTabs);
+    });
+  });
 }

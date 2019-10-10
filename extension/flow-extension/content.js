@@ -1,22 +1,17 @@
 // In the manifest, this script is set to only be injected into pages that match our site
 
-// This will send a message to the background script
-chrome.runtime.sendMessage({ recentlyClosed: 'true' }, function(tabs) {
-  // When the background script responds with the sessions,
-  // we will list out the recently closed tab names
-  updateTabWidget(tabs);
-});
+getTabsFromBackground();
 
 chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
   if (request.newClosed === 'true') {
-    updateTabWidget(request.tabs);
+    getTabsFromBackground();
   }
 
   return true;
 });
 
 /**
- * takes in an array of sessions and updates the tab widget on the page with them
+ * takes in an array of tabs and updates the tab widget on the page with them
  * @param {[Tab]} tabs chrome tab objects with additional information
  */
 function updateTabWidget(tabs) {
@@ -25,9 +20,9 @@ function updateTabWidget(tabs) {
     document.getElementById('recentTabs').innerHTML = '';
   }
 
-  // loop over every session
-  for (let i = 0; i < Object.keys(tabs).length; i++) {
-    const tab = tabs[Object.keys(tabs)[i]];
+  // loop over every tab
+  for (let i = 0; i < tabs.length; i++) {
+    const tab = tabs[i];
     if (tab) {
       updateWidgetWithTab(tab);
     }
@@ -46,4 +41,21 @@ function updateWidgetWithTab(tab) {
     ${tab.title}
     </a>`;
   }
+}
+
+function getTabsFromBackground() {
+  // This will send a message to the background script
+  chrome.runtime.sendMessage({ recentlyClosed: 'true' }, function(tabs) {
+    // When the background script responds with the sessions,
+    // we will list out the recently closed tab names
+    const localCategory = JSON.parse(window.localStorage.getItem('category'));
+    if (localCategory) {
+      const chromeCategory = {
+        name: localCategory
+      };
+      chrome.storage.local.set({ category: chromeCategory });
+    }
+    console.log(tabs);
+    updateTabWidget(tabs);
+  });
 }
