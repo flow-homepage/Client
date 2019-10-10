@@ -22,6 +22,6 @@ export default class MomentTime extends Component {
     });
   }
   render() {
-    return <h1> {this.state.time} </h1>;
+    return <h1 className="time"> {this.state.time} </h1>;
   }
 }

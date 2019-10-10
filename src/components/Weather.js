@@ -34,7 +34,7 @@ export default class Weather extends Component {
   render() {
     return (
       <React.Fragment>
-        <h1>
+        <h1 className="weather">
           {this.state.weather} {this.state.summary}
         </h1>
       </React.Fragment>

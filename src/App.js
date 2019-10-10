@@ -43,7 +43,7 @@ class App extends Component {
         <Router>
           <Background />
           <Header />
-          <section>
+          <section className="libs">
             <MomentTime />
             <Weather lat={lat} lng={lng} />
           </section>

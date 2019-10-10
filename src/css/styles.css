@@ -34,6 +34,10 @@ h2 {
   font-weight: bold;
   font-family: "Marck Script", cursive;
 }
+.libs {
+  display: inline-block;
+  justify-content: space-between;
+}
 .logoImg {
   display: block;
   width: 3rem;
@@ -252,5 +256,6 @@ footer #credits a {
 
 .navroute {
   left: 1rem;
-  justify-content: right;
+  justify-content: space-between;
+  text-align: right;
 }

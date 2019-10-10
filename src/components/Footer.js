@@ -20,7 +20,7 @@ export default class Footer extends Component {
 
     this.setState({
       maker: res.data.user.name,
-      makerUrl: res.data.user.portfolio_url,
+      makerUrl: `${res.data.user.links.html}?utm_source=flow_homepage&utm_medium=referral`,
       location: res.data.user.location,
     });
   }
@@ -29,9 +29,19 @@ export default class Footer extends Component {
       <>
         <footer className="foot">
           <nav className="navnav">
-            <a href={this.state.makerUrl}>
-              ${this.state.maker} {this.state.location}
-            </a>
+            <div>
+              Photo of {''} {this.state.location} {''} by {''}
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href={this.state.makerUrl}
+              >
+                {this.state.maker}
+              </a>
+              <a href="https://unsplash.com?utm_source=flow_homepage&utm_medium=referral">
+                {''} on Unsplash
+              </a>
+            </div>
           </nav>
           <nav className="navroute">
             <Link to="signup">Sign Up</Link>
