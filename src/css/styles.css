@@ -33,6 +33,7 @@ h2 {
   font-weight: bold;
   font-family: "Marck Script", cursive;
 }
+
 .logoImg {
   display: block;
   width: 3rem;
@@ -59,7 +60,31 @@ h2 {
   grid-area: title;
 }
 
-.tabWidget button {
+.categoryTabs input[type="radio"] {
+  opacity: 0;
+  width: 0;
+}
+
+.categoryTabs label {
+  background-color: hsl(224, 43%, 25%);
+  padding: 10px 20px;
+  font-size: 2.8vmin;
+  font-family: "Nunito Sans", sans-serif;
+  color: hsl(224, 43%, 90%);
+  border: 1px solid rgba(0, 0, 0, 0);
+  border-radius: 10px 10px 0 0;
+}
+
+.categoryTabs label:hover {
+  border: 1px solid hsl(224, 43%, 90%);
+}
+
+.categoryTabs input[type="radio"]:checked+label {
+  background-color: #CC457D;
+  border-color: #FF958C;
+}
+
+#expandButton {
   height: 3rem;
   width: 3rem;
   border: none;
@@ -72,7 +97,8 @@ h2 {
   grid-area: button;
   align-self: start;
 }
-.tabWidget button.expanded {
+
+#expandButton.expanded {
   background: url(/img/collapse.png) no-repeat;
   background-size: 100% 50%;
   background-position: center;
@@ -99,7 +125,7 @@ h2 {
   transition: height 0.5s;
 }
 
-#recentTabs > a.recentTab {
+#recentTabs>a.recentTab {
   width: 26%;
   height: 5vh;
   border-radius: 10px;
@@ -118,7 +144,7 @@ h2 {
   border: 1px solid rgba(0, 0, 0, 0);
 }
 
-#recentTabs > a.recentTab:hover {
+#recentTabs>a.recentTab:hover {
   transition: border 0.2s;
   box-shadow: 0.25rem 0.25rem 0.25rem rgba(0, 0, 0, 0.4);
   border: 1px solid hsl(224, 43%, 25%);
@@ -171,6 +197,7 @@ footer #credits {
   bottom: 8px;
   left: 16px;
 }
+
 footer #credits a {
   text-decoration: none;
 }
@@ -194,16 +221,15 @@ footer #credits a {
 }
 
 .footer {
-  background: linear-gradient(
-    to right,
-    var(--work-orange) 45%,
-    transparent 50%
-  );
+  background: linear-gradient(to right,
+      var(--work-orange) 45%,
+      transparent 50%);
   background-size: 200% 100%;
   background-position: right bottom;
   color: var(--snips-white);
   transition: all 0.2s linear;
 }
+
 .footer:hover {
   background-position: left bottom;
   transition: all 0.2s linear;
@@ -213,4 +239,8 @@ footer #credits a {
   text-decoration: none;
   outline: none;
   color: hsl(224, 43%, 90%);
+}
+
+.hidden {
+  display: none;
 }
