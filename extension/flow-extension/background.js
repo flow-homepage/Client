@@ -65,7 +65,7 @@ function getTabsFromSessions(sessions, callback) {
   let categoryName = 'Uncategorized';
   let tabs = {};
 
-  chrome.storage.sync.get(['flowTabs'], function(tabResult) {
+  chrome.storage.local.get(['flowTabs'], function(tabResult) {
     if (tabResult.flowTabs) {
       tabs = tabResult.flowTabs;
     }
@@ -99,7 +99,7 @@ function getTabsFromSessions(sessions, callback) {
         }
       }
 
-      chrome.storage.sync.set({ flowTabs: tabs });
+      chrome.storage.local.set({ flowTabs: tabs });
 
       const sortedTabs = [];
       Object.keys(tabs).forEach(function(key, index) {
