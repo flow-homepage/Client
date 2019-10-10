@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import axios from 'axios';
+import React, { Component } from "react";
+import axios from "axios";
 
 export default class Weather extends Component {
   static propTypes = {};
@@ -7,8 +7,8 @@ export default class Weather extends Component {
     super(props);
 
     this.state = {
-      weather: '',
-      summary: '',
+      weather: "",
+      summary: ""
     };
   }
   /**
@@ -17,15 +17,18 @@ export default class Weather extends Component {
    */
   async componentDidMount() {
     const res = await axios.get(
-      `https://flowhome-server.herokuapp.com/api/weather`, {params: {
-        lat: this.props.lat,
-        lng: this.props.lng
-      } }
+      `https://flowhome-server.herokuapp.com/api/weather`,
+      {
+        params: {
+          lat: this.props.lat,
+          lng: this.props.lng
+        }
+      }
     );
     // console.log(res);
     this.setState({
       weather: `${res.data.temperature}°F`,
-      summary: res.data.summary,
+      summary: res.data.summary
     });
   }
   render() {
