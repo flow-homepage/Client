@@ -3,10 +3,8 @@ import React, { Component } from "react";
 export default class Ivy extends Component {
   render() {
     return (
-      <div>
-        <div>
-          <span className="modal-exit">&times;</span>
-          <div>
+          <>
+          <h1>It's..... Ivy Lim!</h1>
             <h1>Easily Distracted work-a-holic | Impulsive Web Surfer</h1>
             <ul>
               <li>Interests, Curiosities, Motivations & Passions</li>
@@ -20,9 +18,8 @@ export default class Ivy extends Component {
               <img src="/img/ivy3.svg" alt="" />
               <img src="/img/ivy4.svg" alt="" />
             </ul>
-          </div>
-        </div>
-      </div>
+        </>
+
     );
   }
 }

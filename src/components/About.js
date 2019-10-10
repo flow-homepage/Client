@@ -1,8 +1,10 @@
 import React, { Component } from "react";
+import ReactModal from 'react-modal';
 import Ivy from "./Modals/Ivy";
 import Andre from "./Modals/Andre";
 import Cody from "./Modals/Cody";
 import Dean from "./Modals/Dean";
+
 export default class About extends Component {
   constructor(props) {
     super(props);
@@ -13,26 +15,29 @@ export default class About extends Component {
       dean: false
     };
   }
+  componentDidMount = () => {
+    ReactModal.setAppElement('body');
+  }
 
-  showIvy = () => {
+toggleIvy = () => {
     this.setState(state => ({
       ivy: !state.ivy
     }));
   };
 
-  showCody = () => {
+toggleCody = () => {
     this.setState(state => ({
       cody: !state.cody
     }));
   };
 
-  showAndre = () => {
+toggleAndre = () => {
     this.setState(state => ({
       andre: !state.andre
     }));
   };
 
-  showDean = () => {
+toggleDean = () => {
     this.setState(state => ({
       dean: !state.dean
     }));
@@ -41,17 +46,25 @@ export default class About extends Component {
   render() {
     return (
       <>
-        <h1 className="title">Meet the Devs!</h1>
+        <h1 className="title">Who's That Developer?</h1>
         <div id="team">
           {/* add spans to style with images */}
-          <button onClick={this.showIvy}>Ivy</button>
-          {this.state.ivy ? <Ivy /> : ""}
-          <button onClick={this.showCody}>Cody</button>
-          {this.state.cody ? <Cody /> : ""}
-          <button onClick={this.showAndre}>Andre</button>
-          {this.state.andre ? <Andre /> : ""}
-          <button onClick={this.showDean}>Dean</button>
-          {this.state.dean ? <Dean /> : ""}
+      <div className="buttonImage" onClick={this.toggleIvy}  alt="" id="ivy"/>
+          <ReactModal isOpen={this.state.ivy}  onRequestClose={this.toggleIvy} className="modal">
+          <Ivy/>
+          </ReactModal>
+          <div className="buttonImage" onClick={this.toggleCody}  alt="" id="cody"/>
+          <ReactModal isOpen={this.state.cody}  onRequestClose={this.toggleCody} className="modal">
+          <Cody/>
+          </ReactModal>
+          <div className="buttonImage" onClick={this.toggleAndre}  alt="" id="andre"/>
+          <ReactModal isOpen={this.state.andre}  onRequestClose={this.toggleAndre} className="modal">
+          <Andre/>
+          </ReactModal>
+          <div className="buttonImage" onClick={this.toggleDean}  alt="" id="dean"/>
+          <ReactModal isOpen={this.state.dean}  onRequestClose={this.toggleDean} className="modal">
+          <Dean/>
+          </ReactModal>
         </div>
       </>
     );

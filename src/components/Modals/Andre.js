@@ -3,10 +3,8 @@ import React, { Component } from "react";
 export default class Andre extends Component {
   render() {
     return (
-      <div>
-        <div>
-          <span className="modal-exit">&times;</span>
-          <div>
+<>
+          <h1>It's..... Andre Aggalut!</h1>
             <h1>Music Lover | Quote Appreciator</h1>
             <ul>
               <li>Interests, Curiosities, Motivations & Passions</li>
@@ -25,9 +23,7 @@ export default class Andre extends Component {
               <img src="/img/andre3.svg" alt="" />
               <img src="/img/andre4.svg" alt="" />
             </ul>
-          </div>
-        </div>
-      </div>
+</>
     );
   }
 }

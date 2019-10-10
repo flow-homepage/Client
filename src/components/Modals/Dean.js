@@ -3,10 +3,8 @@ import React, { Component } from "react";
 export default class Dean extends Component {
   render() {
     return (
-      <div>
-        <div>
-          <span className="modal-exit">&times;</span>
-          <div>
+<>
+          <h1>It's..... Dean Sumitro!</h1>
             <h1>
               Tab Hoarder | Forgetful Web Surfer | Impulsive youtube binger
             </h1>
@@ -33,9 +31,7 @@ export default class Dean extends Component {
               <img src="/img/dean3.svg" alt="" />
               <img src="/img/dean4.svg" alt="" />
             </ul>
-          </div>
-        </div>
-      </div>
+</>
     );
   }
 }
