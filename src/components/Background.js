@@ -23,12 +23,6 @@ export default class Background extends Component {
     // this.style.backgroundSize = `cover`;
     // this.innerHTML = `${res.data.user.name}`;
     // this.photoCredits.href = `${res.data.user.links.html}?utm_source=flow_homepage&utm_medium=referral`;
-
-    // this.setState({
-    //   background: res.data.urls.regular,
-    //   maker: res.data.user.name,
-    //   photocredit: res.data.user.links.html,
-    // });
   }
   render() {
     return <div ref={this.rootRef} className="bg" />;

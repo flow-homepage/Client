@@ -228,7 +228,29 @@ footer #credits a {
   width: 100vw;
 }
 
+.bg-username {
+  position: fixed;
+  bottom: 3rem;
+  left: 1rem;
+  z-index: 500;
+}
+
 .title {
   left: 50%;
   right: 50%;
+}
+
+.foot {
+  display: "flex";
+  justify-content: "space-between";
+  text-align: left;
+}
+
+.navnav {
+  margin: 20px;
+}
+
+.navroute {
+  left: 1rem;
+  justify-content: right;
 }
