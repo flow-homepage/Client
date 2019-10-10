@@ -1,54 +1,75 @@
 // In the manifest, this script is set to only be injected into pages that match our site
 
-// This will send a message to the background script
-chrome.runtime.sendMessage({ recentlyClosed: 'true' }, function(sessions) {
-  // When the background script responds with the sessions,
-  // we will list out the recently closed tab names
-  updateTabWidget(sessions);
-});
+getTabsFromBackground();
 
 chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
-  // Send back the sessions object containing all recently closed sessions to whomever sent the message
   if (request.newClosed === 'true') {
-    updateTabWidget(request.sessions);
+    getTabsFromBackground();
   }
 
   return true;
 });
 
 /**
- * takes in an array of sessions and updates the tab widget on the page with them
- * @param {[Session]} sessions chrome session objects
+ * takes in an array of tabs and updates the tab widget on the page with them
+ * @param {[Tab]} tabs chrome tab objects with additional information
  */
-function updateTabWidget(sessions) {
+function updateTabWidget(tabs) {
   // remove "requires extension" message
-  document.getElementById('recentTabs').innerHTML = '';
+  if (document.getElementById('recentTabs')) {
+    document.getElementById('recentTabs').innerHTML = '';
+  }
 
-  // loop over every session
-  for (let i = 0; i < sessions.length; i++) {
-    const { tab, window } = sessions[i];
+  // loop over every tab
+  for (let i = 0; i < tabs.length; i++) {
+    const tab = tabs[i];
     if (tab) {
       updateWidgetWithTab(tab);
-    } else {
-      // if the session was a window, loop over every tab in the window
-      for (let j = 0; j < window.tabs.length; j++) {
-        const windowTab = window.tabs[j];
-        updateWidgetWithTab(windowTab);
-      }
     }
   }
 }
 
 /**
  * uses a single tab object to create a single button for the widget
- * @param {Tab} tab chrome tab object
+ * @param {Tab} tab chrome tab object with additional information
  */
 function updateWidgetWithTab(tab) {
-  document.getElementById(
-    'recentTabs'
-  ).innerHTML += `<a class="recentTab" title="${tab.url}" href="${
-    tab.url
-  }" target="_blank">
+  if (document.getElementById('recentTabs')) {
+    document.getElementById(
+      'recentTabs'
+    ).innerHTML += `<a class="recentTab category${tab.category} hidden" title="${tab.url}" href="${tab.url}" target="_blank">
     ${tab.title}
     </a>`;
+
+    let localCategory = window.localStorage.getItem('category');
+    if (!localCategory) {
+      localCategory = 'Uncategorized';
+    }
+
+    document.querySelectorAll(`.recentTab`).forEach(element => {
+      if (!element.classList.contains('hidden')) {
+        element.classList.add('hidden');
+      }
+    });
+
+    document.querySelectorAll(`.category${localCategory}`).forEach(element => {
+      if (element.classList.contains('hidden')) {
+        element.classList.remove('hidden');
+      }
+    });
+  }
+}
+
+function getTabsFromBackground() {
+  const localCategory = window.localStorage.getItem('category');
+  if (localCategory) {
+    chrome.storage.local.set({ category: localCategory }, () => {
+      // This will send a message to the background script
+      chrome.runtime.sendMessage({ recentlyClosed: 'true' }, function(tabs) {
+        // When the background script responds with the sessions,
+        // we will list out the recently closed tab names
+        updateTabWidget(tabs);
+      });
+    });
+  }
 }
