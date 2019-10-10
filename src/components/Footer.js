@@ -9,6 +9,7 @@ export default class Footer extends Component {
     this.state = {
       maker: '',
       makerUrl: '',
+      location: '',
     };
   }
 
@@ -20,6 +21,7 @@ export default class Footer extends Component {
     this.setState({
       maker: res.data.user.name,
       makerUrl: res.data.user.portfolio_url,
+      location: res.data.user.location,
     });
   }
   render() {
@@ -27,7 +29,9 @@ export default class Footer extends Component {
       <>
         <footer className="foot">
           <nav className="navnav">
-            <a href={this.state.makerUrl}>{this.state.maker}</a>
+            <a href={this.state.makerUrl}>
+              ${this.state.maker} {this.state.location}
+            </a>
           </nav>
           <nav className="navroute">
             <Link to="signup">Sign Up</Link>
