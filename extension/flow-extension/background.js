@@ -62,7 +62,7 @@ chrome.tabs.onRemoved.addListener(() => {
 });
 
 function getTabsFromSessions(sessions, callback) {
-  let categoryName = 'Default';
+  let categoryName = 'Uncategorized';
   let tabs = {};
 
   chrome.storage.sync.get(['flowTabs'], function(tabResult) {
@@ -81,16 +81,20 @@ function getTabsFromSessions(sessions, callback) {
         tab = Object.assign({}, tab);
         window = Object.assign({}, window);
         if (tab) {
-          tab.time = sessions[i].lastModified;
-          tab.category = categoryName;
-          tabs[tab.url] = tab;
+          if (!tabs[tab.url]) {
+            tab.time = sessions[i].lastModified;
+            tab.category = categoryName;
+            tabs[tab.url] = tab;
+          }
         } else {
           // if the session was a window, loop over every tab in the window
           for (let j = 0; j < window.tabs.length; j++) {
             const windowTab = window.tabs[j];
-            windowTab.time = sessions[i].lastModified;
-            windowTab.category = categoryName;
-            tabs[windowTab.url] = windowTab;
+            if (!tabs[windowTab.url]) {
+              windowTab.time = sessions[i].lastModified;
+              windowTab.category = categoryName;
+              tabs[windowTab.url] = windowTab;
+            }
           }
         }
       }

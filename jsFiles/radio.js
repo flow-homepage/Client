@@ -19,4 +19,16 @@ function handleCategoryRadio() {
   };
 
   window.localStorage.setItem('category', JSON.stringify(category));
+
+  document.querySelectorAll(`.recentTab`).forEach(element => {
+    if (!element.classList.contains('hidden')) {
+      element.classList.add('hidden');
+    }
+  });
+
+  document.querySelectorAll(`.category${selectedValue}`).forEach(element => {
+    if (element.classList.contains('hidden')) {
+      element.classList.remove('hidden');
+    }
+  });
 }

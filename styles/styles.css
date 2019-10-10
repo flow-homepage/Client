@@ -240,3 +240,7 @@ footer #credits a {
   outline: none;
   color: hsl(224, 43%, 90%);
 }
+
+.hidden {
+  display: none;
+}

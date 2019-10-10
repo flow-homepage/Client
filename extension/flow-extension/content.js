@@ -37,25 +37,45 @@ function updateWidgetWithTab(tab) {
   if (document.getElementById('recentTabs')) {
     document.getElementById(
       'recentTabs'
-    ).innerHTML += `<a class="recentTab" title="${tab.url}" href="${tab.url}" target="_blank">
+    ).innerHTML += `<a class="recentTab category${tab.category.name} hidden" title="${tab.url}" href="${tab.url}" target="_blank">
     ${tab.title}
     </a>`;
+
+    let localCategory = JSON.parse(window.localStorage.getItem('category'));
+    if (!localCategory) {
+      localCategory = 'Uncategorized';
+    }
+
+    document.querySelectorAll(`.recentTab`).forEach(element => {
+      if (!element.classList.contains('hidden')) {
+        element.classList.add('hidden');
+      }
+    });
+
+    document
+      .querySelectorAll(`.category${localCategory.name}`)
+      .forEach(element => {
+        if (element.classList.contains('hidden')) {
+          element.classList.remove('hidden');
+        }
+      });
   }
 }
 
 function getTabsFromBackground() {
-  // This will send a message to the background script
-  chrome.runtime.sendMessage({ recentlyClosed: 'true' }, function(tabs) {
-    // When the background script responds with the sessions,
-    // we will list out the recently closed tab names
-    const localCategory = JSON.parse(window.localStorage.getItem('category'));
-    if (localCategory) {
-      const chromeCategory = {
-        name: localCategory
-      };
-      chrome.storage.local.set({ category: chromeCategory });
-    }
-    console.log(tabs);
-    updateTabWidget(tabs);
-  });
+  const localCategory = JSON.parse(window.localStorage.getItem('category'));
+  if (localCategory) {
+    const chromeCategory = {
+      name: localCategory
+    };
+    chrome.storage.local.set({ category: chromeCategory }, () => {
+      // This will send a message to the background script
+      chrome.runtime.sendMessage({ recentlyClosed: 'true' }, function(tabs) {
+        // When the background script responds with the sessions,
+        // we will list out the recently closed tab names
+        console.log(tabs);
+        updateTabWidget(tabs);
+      });
+    });
+  }
 }
