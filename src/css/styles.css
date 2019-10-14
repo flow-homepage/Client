@@ -4,8 +4,7 @@
 @import "./variables.css";
 @import "./modal.css";
 @import "./about.css";
-@import "./signup.css";
-/* @import "./pictures.css"; */
+@import "./forms.css";
 
 html {
   font-size: 2.8vmin;
@@ -83,9 +82,9 @@ h2 {
   border: 1px solid hsl(224, 43%, 90%);
 }
 
-.categoryTabs input[type="radio"]:checked+label {
-  background-color: #CC457D;
-  border-color: #FF958C;
+.categoryTabs input[type="radio"]:checked + label {
+  background-color: #cc457d;
+  border-color: #ff958c;
 }
 
 #expandButton {
@@ -129,7 +128,7 @@ h2 {
   transition: height 0.5s;
 }
 
-#recentTabs>a.recentTab {
+#recentTabs > a.recentTab {
   width: 26%;
   height: 5vh;
   border-radius: 10px;
@@ -148,7 +147,7 @@ h2 {
   border: 1px solid rgba(0, 0, 0, 0);
 }
 
-#recentTabs>a.recentTab:hover {
+#recentTabs > a.recentTab:hover {
   transition: border 0.2s;
   box-shadow: 0.25rem 0.25rem 0.25rem rgba(0, 0, 0, 0.4);
   border: 1px solid hsl(224, 43%, 25%);
@@ -225,9 +224,11 @@ footer #credits a {
 }
 
 .footer {
-  background: linear-gradient(to right,
-      var(--work-orange) 45%,
-      transparent 50%);
+  background: linear-gradient(
+    to right,
+    var(--work-orange) 45%,
+    transparent 50%
+  );
   background-size: 200% 100%;
   background-position: right bottom;
   color: var(--snips-white);
