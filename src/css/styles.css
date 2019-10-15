@@ -214,3 +214,21 @@ footer #credits a {
   outline: none;
   color: hsl(224, 43%, 90%);
 }
+
+.locationButton {
+  padding: 5px 10px;
+  box-shadow:0px 1px 0px hsl(207, 58%, 68%);
+  background-color: hsl(224, 43%, 90%);
+  outline: none;
+  border-radius: 5px;
+  border: none;
+}
+
+.locationButton:active {
+  box-shadow: 0 0 hsl(207, 58%, 68%); background-color: hsl(207, 58%, 68%);
+}
+
+.locationButton:hover {
+  cursor: pointer;
+  border: 2px solid hsl(207, 58%, 68%);
+}

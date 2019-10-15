@@ -13,6 +13,7 @@ export default class Weather extends Component {
     this.state = {
       weather: '',
       summary: '',
+      city: ''
     };
   }
   /**
@@ -34,6 +35,8 @@ export default class Weather extends Component {
       summary: res.data.summary,
     });
   }
+
+  
   render() {
     return (
       <React.Fragment>

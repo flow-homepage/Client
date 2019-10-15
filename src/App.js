@@ -1,10 +1,8 @@
 import React, { Component } from 'react';
-import Swal from 'sweetalert2';
 import './css/styles.css';
 import MomentTime from './components/MomentTime';
 import Weather from './components/Weather';
 import BrowserHistory from './components/BrowserHistory';
-import LocationModal from './components/LocationModal';
 
 class App extends Component {
   constructor(props) {
@@ -12,20 +10,19 @@ class App extends Component {
     this.state = {
       lat: 34.0522,
       lng: -118.2436,
-      toggleLocation: false,
     };
   }
-  
-
 
   getCurrentPosition = () => {
-    const position = navigator.geolocation.getCurrentPosition(this.displayLocationInfo);
-    setTimeout(() => {
-      navigator.geolocation.clearWatch(position);
-    }, 10000);
+    if (navigator.geolocation) {
+      const position = navigator.geolocation.getCurrentPosition(this.updateLocationInfo);
+      setTimeout(() => {
+        navigator.geolocation.clearWatch(position);
+      }, 10000);
+    }
   }
   
-  displayLocationInfo = (position) => {
+  updateLocationInfo = (position) => {
     const lng = position.coords.longitude;
     const lat = position.coords.latitude;
     this.setState({
@@ -34,14 +31,8 @@ class App extends Component {
     });
   }
 
-  toggleLocation = () => {
-    this.setState(state => ({
-      toggleLocation: !state.toggleLocation,
-    }));
-  }
-
   render() {
-    const { lat, lng, toggleLocation } = this.state;
+    const { lat, lng } = this.state;
     return (
       <React.Fragment>
         <header>
@@ -51,10 +42,10 @@ class App extends Component {
           <section>
             <MomentTime />
             <Weather lat={lat} lng={lng} />
-            <button onClick={this.toggleLocation}>🌐</button>
+            <button className="locationButton" onClick={this.getCurrentPosition}><span role="img" aria-label="get-location">🌐</span></button>
           </section>
         </header>
-        { toggleLocation ? <LocationModal getCurrentPosition={this.getCurrentPosition} displayLocationInfo={this.displayLocationInfo} /> : ''}
+        
         <BrowserHistory />
         <footer>
           <a className="footer" href="./pages/signup.html">
