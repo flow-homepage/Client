@@ -30,6 +30,9 @@ export default class Weather extends Component {
       weather: `${res.data.temperature}°F`,
       summary: res.data.summary,
     });
+
+    // tick function
+    // update every hour
   }
   render() {
     return (
