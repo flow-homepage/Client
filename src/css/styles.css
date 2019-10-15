@@ -5,8 +5,7 @@
 @import "./modal.css";
 @import "./about.css";
 @import "./signup.css";
-/* @import "./pictures.css"; */
-
+@import "./background.css";
 html {
   font-size: 2.8vmin;
   font-family: "Nunito Sans", sans-serif;
@@ -36,10 +35,6 @@ h2 {
   font-size: 3rem;
   font-weight: bold;
   font-family: "Marck Script", cursive;
-}
-.libs {
-  display: inline-block;
-  justify-content: space-between;
 }
 .logoImg {
   display: block;
@@ -221,44 +216,4 @@ footer #credits a {
   text-decoration: none;
   outline: none;
   color: hsl(224, 43%, 90%);
-}
-
-.bg {
-  /* background: linear-gradient(rgba(36, 51, 91, 0.5), rgba(36, 51, 91, 0.5)),
-    url(/img/background.jpg); */
-  position: absolute;
-  z-index: -3;
-  background-size: cover;
-  /* background-position: center; */
-  overflow: hidden;
-  height: 100vh;
-  width: 100vw;
-}
-
-.bg-username {
-  position: fixed;
-  bottom: 3rem;
-  left: 1rem;
-  z-index: 500;
-}
-
-.title {
-  left: 50%;
-  right: 50%;
-}
-
-.foot {
-  display: "flex";
-  justify-content: "space-between";
-  text-align: left;
-}
-
-.navnav {
-  margin: 20px;
-}
-
-.navroute {
-  left: 1rem;
-  justify-content: space-between;
-  text-align: right;
 }
