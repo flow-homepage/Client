@@ -6,7 +6,7 @@ export default class MyComponent extends React.Component {
     return (
       <Clock
         ticking={true}
-        format="dddd, MMMM Mo, YYYY, h:mm A"
+        format="dddd, MMMM Do, YYYY, h:mm A"
         timezone="US/Pacific"
       />
     );
