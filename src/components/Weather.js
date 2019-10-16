@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import PropTypes from 'prop-types';
 
+
 export default class Weather extends Component {
   static propTypes = {
     lat: PropTypes.number,
@@ -11,8 +12,8 @@ export default class Weather extends Component {
     super(props);
 
     this.state = {
-      weather: '',
-      summary: '',
+      weather: "",
+      summary: ""
     };
   }
   /**
@@ -26,12 +27,13 @@ export default class Weather extends Component {
         params: {
           lat,
           lng
+
         }
       }
     );
     this.setState({
       weather: `${res.data.temperature}°F`,
-      summary: res.data.summary,
+      summary: res.data.summary
     });
   }
   render() {
