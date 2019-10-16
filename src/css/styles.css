@@ -63,6 +63,10 @@ h2 {
   grid-area: title;
 }
 
+.categoryTabs {
+  padding-bottom: 1%;
+}
+
 .categoryTabs input[type="radio"] {
   opacity: 0;
   width: 0;
@@ -195,35 +199,41 @@ footer {
   padding: 5px;
 }
 
-footer #credits {
-  position: absolute;
-  bottom: 8px;
+footer .credits {
+  position: bottom;
   left: 16px;
+  margin-left: 1%;
 }
 
-footer #credits a {
+footer .credits a {
   text-decoration: none;
 }
 
-.footer {
+footer {
   text-align: center;
   padding: 5px;
 }
 
 /* footer link highlight */
 
-.footer:visited,
-.footer:active,
-.footer:link {
+footer .navroute a:visited,
+footer.navroute a:active,
+footer.navroute a:link {
   color: hsl(224, 43%, 90%);
   text-decoration: none;
 }
 
-.footer:hover {
+footer .navroute a:hover {
   cursor: pointer;
 }
 
-.footer {
+footer .navroute a {
+  text-decoration: none;
+  color: var(--work-white);
+  padding: 1%;
+}
+
+footer .navroute a {
   background: linear-gradient(
     to right,
     var(--work-orange) 45%,
@@ -235,12 +245,12 @@ footer #credits a {
   transition: all 0.2s linear;
 }
 
-.footer:hover {
+footer:hover {
   background-position: left bottom;
   transition: all 0.2s linear;
 }
 
-.contact a {
+contact a {
   text-decoration: none;
   outline: none;
   color: hsl(224, 43%, 90%);
