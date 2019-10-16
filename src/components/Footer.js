@@ -1,17 +1,49 @@
-import React, { Component } from "react";
-import PropTypes from "prop-types";
-import { Link } from "react-router-dom";
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+import axios from 'axios';
 
 export default class Footer extends Component {
-  static propTypes = {
-    prop: PropTypes
-  };
+  static propTypes = {};
+  constructor(props) {
+    super(props);
+    this.state = {
+      maker: '',
+      makerUrl: '',
+      location: '',
+    };
+  }
 
+  async componentDidMount() {
+    const res = await axios.get(
+      `https://flowhome-server.herokuapp.com/api/background`
+    );
+
+    this.setState({
+      maker: res.data.user.name,
+      makerUrl: `${res.data.user.links.html}?utm_source=flow_homepage&utm_medium=referral`,
+      location: res.data.user.location,
+    });
+  }
   render() {
     return (
       <>
-        <footer>
-          <nav>
+        <footer className="foot">
+          <nav className="navnav">
+            <div>
+              Photo of {''} {this.state.location} {''} by {''}
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href={this.state.makerUrl}
+              >
+                {this.state.maker}
+              </a>
+              <a href="https://unsplash.com?utm_source=flow_homepage&utm_medium=referral">
+                {''} on Unsplash
+              </a>
+            </div>
+          </nav>
+          <nav className="navroute">
             <Link to="signup">Sign Up</Link>
             <Link to="login">Log In</Link>
             <Link to="about">About Us</Link>
