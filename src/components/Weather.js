@@ -1,5 +1,5 @@
-import React, { Component } from "react";
-import axios from "axios";
+import React, { Component } from 'react';
+import axios from 'axios';
 
 export default class Weather extends Component {
   static propTypes = {};
@@ -7,8 +7,8 @@ export default class Weather extends Component {
     super(props);
 
     this.state = {
-      weather: "",
-      summary: ""
+      weather: '',
+      summary: '',
     };
   }
   /**
@@ -21,20 +21,23 @@ export default class Weather extends Component {
       {
         params: {
           lat: this.props.lat,
-          lng: this.props.lng
-        }
+          lng: this.props.lng,
+        },
       }
     );
     // console.log(res);
     this.setState({
       weather: `${res.data.temperature}°F`,
-      summary: res.data.summary
+      summary: res.data.summary,
     });
+
+    // tick function
+    // update every hour
   }
   render() {
     return (
       <React.Fragment>
-        <h1>
+        <h1 className="weather">
           {this.state.weather} {this.state.summary}
         </h1>
       </React.Fragment>

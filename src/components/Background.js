@@ -5,9 +5,9 @@ export default class Background extends Component {
   static propTypes = {};
   constructor(props) {
     super(props);
-
+    this.rootRef = React.createRef();
     this.state = {
-      background: [],
+      // background: [],
     };
   }
 
@@ -16,16 +16,15 @@ export default class Background extends Component {
       `https://flowhome-server.herokuapp.com/api/background`
     );
 
-    this.setState({
-      background: res.data,
-    });
+    const backgroundDiv = this.rootRef.current;
+    backgroundDiv.style.backgroundImage = `linear-gradient(rgba(36, 51, 91, 0.5), rgba(36, 51, 91, 0.5)), url('${res.data.urls.regular}')`;
+    // backgroundDiv.style.backgroundSize = `cover`;
+    // backgroundDiv.style.height = `100vh`;
+    // this.style.backgroundSize = `cover`;
+    // this.innerHTML = `${res.data.user.name}`;
+    // this.photoCredits.href = `${res.data.user.links.html}?utm_source=flow_homepage&utm_medium=referral`;
   }
   render() {
-    return (
-      <React.Fragment>
-        <img src={this.state.background} alt="bg" className="bg" />
-        <div className="bg-color" />
-      </React.Fragment>
-    );
+    return <div ref={this.rootRef} className="bg" />;
   }
 }

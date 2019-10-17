@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './css/styles.css';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import MomentTime from './components/MomentTime';
+// import MomentTime from './components/MomentTime';
 import Weather from './components/Weather';
 import Footer from './components/Footer';
 import About from './components/About';
@@ -11,6 +11,7 @@ import Background from './components/Background';
 import Login from './components/Login';
 import Signup from './components/Signup';
 import Contact from './components/Contact';
+import Time from './components/Time';
 
 class App extends Component {
   constructor(props) {
@@ -44,9 +45,10 @@ class App extends Component {
     return (
       <>
         <Router>
+          <Background />
           <Header />
-          <section>
-            <MomentTime />
+          <section className="libs">
+            <Time />
             <Weather lat={lat} lng={lng} />
           </section>
           <Footer />
@@ -57,7 +59,6 @@ class App extends Component {
             <Route path="/about" exact component={About} />
             <Route path="/contact" exact component={Contact} />
           </Switch>
-          <Background />
         </Router>
       </>
     );
