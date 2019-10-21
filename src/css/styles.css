@@ -35,6 +35,7 @@ h2 {
   font-size: 3rem;
   font-weight: bold;
   font-family: "Marck Script", cursive;
+  padding: 0.5rem;
 }
 
 .logoImg {
@@ -57,6 +58,7 @@ h2 {
     "tabs button";
   grid-column-gap: 1rem;
   width: 95vw;
+  padding: 5vh;
 }
 
 .tabWidget h2 {
@@ -200,9 +202,9 @@ footer {
 }
 
 footer .credits {
-  position: bottom;
-  left: 16px;
-  margin-left: 1%;
+  left: 10px;
+  padding: -10rem;
+  margin-left: 0.5rem;
 }
 
 footer .credits a {
@@ -250,7 +252,7 @@ footer:hover {
   transition: all 0.2s linear;
 }
 
-contact a {
+.contact a {
   text-decoration: none;
   outline: none;
   color: hsl(224, 43%, 90%);
@@ -258,4 +260,23 @@ contact a {
 
 .hidden {
   display: none;
+}
+
+.time {
+  position: absolute;
+  top: 30px;
+  right: 55px;
+  padding: 10px;
+  margin: 10px;
+  font-size: 2.8vmin;
+  font-family: "Nunito Sans", sans-serif;
+}
+
+.weather {
+  position: absolute;
+  right: 160px;
+  top: 20px;
+  font-size: 3.5vmin;
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: bolder;
 }

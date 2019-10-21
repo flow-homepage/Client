@@ -28,20 +28,20 @@ export default class Footer extends Component {
     return (
       <>
         <footer className="foot">
-            <div className="credits">
-              Photo of {''} {this.state.location} {''} by {''}
-              <a
-                target="_blank"
-                rel="noopener noreferrer"
-                href={this.state.makerUrl}
-              >
-                {this.state.maker}
-              </a>
-                {''} on {''}
-              <a href="https://unsplash.com?utm_source=flow_homepage&utm_medium=referral">
-                  Unsplash
-              </a>
-            </div>
+          <div className="credits">
+            Photo of {''} {this.state.location} {''} by {''}
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href={this.state.makerUrl}
+            >
+              {this.state.maker}
+            </a>
+            {''} on {''}
+            <a href="https://unsplash.com?utm_source=flow_homepage&utm_medium=referral">
+              Unsplash
+            </a>
+          </div>
           <nav className="navroute">
             <Link to="signup">Sign Up</Link>
             <Link to="login">Log In</Link>
