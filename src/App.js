@@ -32,13 +32,6 @@ class App extends Component {
     }
   }
 
-  getCurrentPosition = () => {
-    const position = navigator.geolocation.getCurrentPosition(this.displayLocationInfo);
-    setTimeout(() => {
-      navigator.geolocation.clearWatch(position);
-    }, 10000);
-  }
-
   displayLocationInfo = position => {
     const lng = position.coords.longitude;
     const lat = position.coords.latitude;
@@ -58,7 +51,6 @@ class App extends Component {
           <section className="libs">
             <Time />
             <Weather lat={lat} lng={lng} />
-            <button onClick={this.getCurrentPosition}>🌐</button>
           </section>
           
           <BrowserHistory />
