@@ -1,8 +1,12 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import PropTypes from 'prop-types';
 
 export default class Weather extends Component {
-  static propTypes = {};
+  static propTypes = {
+    lat: PropTypes.number,
+    lng: PropTypes.number
+  };
   constructor(props) {
     super(props);
 
@@ -11,21 +15,22 @@ export default class Weather extends Component {
       summary: '',
     };
   }
+
   /**
    * This function grabs the weather from our server
    * and sets it on our front end
    */
   async componentDidMount() {
+    const { lat, lng } = this.props;
     const res = await axios.get(
-      `https://flowhome-server.herokuapp.com/api/weather`,
-      {
+      `https://flowhome-server.herokuapp.com/api/weather`, { 
         params: {
-          lat: this.props.lat,
-          lng: this.props.lng,
-        },
+          lat,
+          lng
+
+        }
       }
     );
-    // console.log(res);
     this.setState({
       weather: `${res.data.temperature}°F`,
       summary: res.data.summary,
@@ -35,10 +40,11 @@ export default class Weather extends Component {
     // update every hour
   }
   render() {
+    const { weather, summary } = this.state;
     return (
       <React.Fragment>
         <h1 className="weather">
-          {this.state.weather} {this.state.summary}
+          {weather} {summary}
         </h1>
       </React.Fragment>
     );
