@@ -4,18 +4,17 @@
 @import "./variables.css";
 @import "./modal.css";
 @import "./about.css";
-@import "./signup.css";
-/* @import "./pictures.css"; */
-
+@import "./forms.css";
+@import "./background.css";
 html {
   font-size: 2.8vmin;
   font-family: "Nunito Sans", sans-serif;
   color: hsl(224, 43%, 90%);
-  background: linear-gradient(rgba(36, 51, 91, 0.5), rgba(36, 51, 91, 0.5)),
+  /* background: linear-gradient(rgba(36, 51, 91, 0.5), rgba(36, 51, 91, 0.5)),
     url(/img/background.jpg);
   background-size: cover;
   height: 100%;
-  overflow: hidden;
+  overflow: hidden; */
 }
 
 header {
@@ -64,6 +63,10 @@ h2 {
   grid-area: title;
 }
 
+.categoryTabs {
+  padding-bottom: 1%;
+}
+
 .categoryTabs input[type="radio"] {
   opacity: 0;
   width: 0;
@@ -83,9 +86,9 @@ h2 {
   border: 1px solid hsl(224, 43%, 90%);
 }
 
-.categoryTabs input[type="radio"]:checked+label {
-  background-color: #CC457D;
-  border-color: #FF958C;
+.categoryTabs input[type="radio"]:checked + label {
+  background-color: #cc457d;
+  border-color: #ff958c;
 }
 
 #expandButton {
@@ -129,7 +132,7 @@ h2 {
   transition: height 0.5s;
 }
 
-#recentTabs>a.recentTab {
+#recentTabs > a.recentTab {
   width: 26%;
   height: 5vh;
   border-radius: 10px;
@@ -148,7 +151,7 @@ h2 {
   border: 1px solid rgba(0, 0, 0, 0);
 }
 
-#recentTabs>a.recentTab:hover {
+#recentTabs > a.recentTab:hover {
   transition: border 0.2s;
   box-shadow: 0.25rem 0.25rem 0.25rem rgba(0, 0, 0, 0.4);
   border: 1px solid hsl(224, 43%, 25%);
@@ -196,50 +199,58 @@ footer {
   padding: 5px;
 }
 
-footer #credits {
-  position: absolute;
-  bottom: 8px;
+footer .credits {
+  position: bottom;
   left: 16px;
+  margin-left: 1%;
 }
 
-footer #credits a {
+footer .credits a {
   text-decoration: none;
 }
 
-.footer {
+footer {
   text-align: center;
   padding: 5px;
 }
 
 /* footer link highlight */
 
-.footer:visited,
-.footer:active,
-.footer:link {
+footer .navroute a:visited,
+footer.navroute a:active,
+footer.navroute a:link {
   color: hsl(224, 43%, 90%);
   text-decoration: none;
 }
 
-.footer:hover {
+footer .navroute a:hover {
   cursor: pointer;
 }
 
-.footer {
-  background: linear-gradient(to right,
-      var(--work-orange) 45%,
-      transparent 50%);
+footer .navroute a {
+  text-decoration: none;
+  color: var(--work-white);
+  padding: 1%;
+}
+
+footer .navroute a {
+  background: linear-gradient(
+    to right,
+    var(--work-orange) 45%,
+    transparent 50%
+  );
   background-size: 200% 100%;
   background-position: right bottom;
   color: var(--snips-white);
   transition: all 0.2s linear;
 }
 
-.footer:hover {
+footer:hover {
   background-position: left bottom;
   transition: all 0.2s linear;
 }
 
-.contact a {
+contact a {
   text-decoration: none;
   outline: none;
   color: hsl(224, 43%, 90%);

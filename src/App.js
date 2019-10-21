@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import './css/styles.css';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import BrowserHistory from './components/BrowserHistory';
-import MomentTime from './components/MomentTime';
 import Weather from './components/Weather';
 import Footer from './components/Footer';
 import About from './components/About';
@@ -12,6 +11,7 @@ import Background from './components/Background';
 import Login from './components/Login';
 import Signup from './components/Signup';
 import Contact from './components/Contact';
+import Time from './components/Time';
 
 
 class App extends Component {
@@ -20,15 +20,8 @@ class App extends Component {
     this.state = {
       lat: 34.0522,
       lng: -118.2436,
-      toggleLocation: false,
     };
   }
-
-  getCurrentPosition = () => {
-    const position = navigator.geolocation.getCurrentPosition(this.displayLocationInfo);
-    setTimeout(() => {
-      navigator.geolocation.clearWatch(position);
-    }, 10000);
 
   componentDidMount() {
     if (navigator.geolocation) {
@@ -37,7 +30,13 @@ class App extends Component {
       // error
       // request location here
     }
+  }
 
+  getCurrentPosition = () => {
+    const position = navigator.geolocation.getCurrentPosition(this.displayLocationInfo);
+    setTimeout(() => {
+      navigator.geolocation.clearWatch(position);
+    }, 10000);
   }
 
   displayLocationInfo = position => {
@@ -49,26 +48,20 @@ class App extends Component {
     });
   };
 
-  toggleLocation = () => {
-    this.setState(state => ({
-      toggleLocation: !state.toggleLocation,
-    }));
-  }
-
   render() {
-    const { lat, lng, toggleLocation } = this.state;
+    const { lat, lng } = this.state;
     return (
       <>
         <Router>
+          <Background />
           <Header />
-          <section>
-            <MomentTime />
+          <section className="libs">
+            <Time />
             <Weather lat={lat} lng={lng} />
-            <button onClick={this.toggleLocation}>🌐</button>
+            <button onClick={this.getCurrentPosition}>🌐</button>
           </section>
-        </header>
-        { toggleLocation ? <LocationModal getCurrentPosition={this.getCurrentPosition} displayLocationInfo={this.displayLocationInfo} /> : ''}
-        <BrowserHistory />
+          
+          <BrowserHistory />
           <Footer />
           <Switch>
             <Route path="/" exact component={Home} />
@@ -77,7 +70,6 @@ class App extends Component {
             <Route path="/about" exact component={About} />
             <Route path="/contact" exact component={Contact} />
           </Switch>
-          <Background />
         </Router>
       </>
     );

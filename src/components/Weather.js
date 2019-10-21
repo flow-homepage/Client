@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import PropTypes from 'prop-types';
 
-
 export default class Weather extends Component {
   static propTypes = {
     lat: PropTypes.number,
@@ -12,10 +11,11 @@ export default class Weather extends Component {
     super(props);
 
     this.state = {
-      weather: "",
-      summary: ""
+      weather: '',
+      summary: '',
     };
   }
+
   /**
    * This function grabs the weather from our server
    * and sets it on our front end
@@ -33,14 +33,18 @@ export default class Weather extends Component {
     );
     this.setState({
       weather: `${res.data.temperature}°F`,
-      summary: res.data.summary
+      summary: res.data.summary,
     });
+
+    // tick function
+    // update every hour
   }
   render() {
+    const { weather, summary } = this.state;
     return (
       <React.Fragment>
-        <h1>
-          {this.state.weather} {this.state.summary}
+        <h1 className="weather">
+          {weather} {summary}
         </h1>
       </React.Fragment>
     );
