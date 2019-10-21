@@ -43,10 +43,9 @@ export default class Footer extends Component {
               </a>
             </div>
           <nav className="navroute">
-            <Link to="signup">Sign Up</Link>
-            <Link to="login">Log In</Link>
+            {/* <Link to="signup">Sign Up</Link> */}
+            {/* <Link to="login">Log In</Link> */}
             <Link to="about">About Us</Link>
-            <Link to="contact">Contact Us</Link>
           </nav>
         </footer>
       </>

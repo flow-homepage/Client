@@ -7,11 +7,9 @@ import About from './components/About';
 import Header from './components/Header';
 import Home from './components/Home';
 import Background from './components/Background';
-import Login from './components/Login';
-import Signup from './components/Signup';
-import Contact from './components/Contact';
+// import Login from './components/Login';
+// import Signup from './components/Signup';
 import Time from './components/Time';
-
 
 class App extends Component {
   constructor(props) {
@@ -54,10 +52,9 @@ class App extends Component {
           <Footer />
           <Switch>
             <Route path="/" exact component={Home} />
-            <Route path="/signup" exact component={Signup} />
-            <Route path="/login" exact component={Login} />
+            {/* <Route path="/signup" exact component={Signup} /> */}
+            {/* <Route path="/login" exact component={Login} /> */}
             <Route path="/about" exact component={About} />
-            <Route path="/contact" exact component={Contact} />
           </Switch>
         </Router>
       </>
