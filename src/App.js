@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import './css/styles.css';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import BrowserHistory from './components/BrowserHistory';
 import Weather from './components/Weather';
 import Footer from './components/Footer';
 import About from './components/About';
@@ -52,8 +51,6 @@ class App extends Component {
             <Time />
             <Weather lat={lat} lng={lng} />
           </section>
-          
-          <BrowserHistory />
           <Footer />
           <Switch>
             <Route path="/" exact component={Home} />
