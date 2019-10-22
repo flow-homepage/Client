@@ -42,12 +42,12 @@ export default class Footer extends Component {
               Unsplash
             </a>
           </div>
-          <nav className="navroute">
+          <div className="navroute">
             <Link to="signup">Sign Up</Link>
             <Link to="login">Log In</Link>
             <Link to="about">About Us</Link>
             <Link to="contact">Contact Us</Link>
-          </nav>
+          </div>
         </footer>
       </>
     );
