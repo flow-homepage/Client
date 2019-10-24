@@ -49,13 +49,13 @@ class App extends Component {
             <Time />
             <Weather lat={lat} lng={lng} />
           </section>
-          <Footer />
           <Switch>
             <Route path="/" exact component={Home} />
             {/* <Route path="/signup" exact component={Signup} /> */}
             {/* <Route path="/login" exact component={Login} /> */}
             <Route path="/about" exact component={About} />
           </Switch>
+          <Footer />
         </Router>
       </>
     );
