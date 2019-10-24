@@ -205,6 +205,8 @@ footer .credits {
   position: relative;
   left: 10px;
   margin-left: 0.5rem;
+  top: 20px;
+  width: 50%;
 }
 
 footer .credits a {
@@ -229,13 +231,13 @@ footer .navroute a:hover {
   cursor: pointer;
 }
 
-footer .navroute :link {
+footer .navroute a {
   text-decoration: none;
   color: var(--work-white);
   padding: 1%;
 }
 
-footer .navroute :link {
+footer .navroute a {
   background: linear-gradient(
     to right,
     var(--work-orange) 45%,
@@ -247,7 +249,7 @@ footer .navroute :link {
   transition: all 0.2s linear;
 }
 
-footer:hover {
+footer .navroute :hover {
   background-position: left bottom;
   transition: all 0.2s linear;
 }
