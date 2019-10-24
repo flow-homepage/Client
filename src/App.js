@@ -12,7 +12,6 @@ import Signup from './components/Signup';
 import Contact from './components/Contact';
 import Time from './components/Time';
 
-
 class App extends Component {
   constructor(props) {
     super(props);
@@ -48,8 +47,8 @@ class App extends Component {
           <Background />
           <Header />
           <section className="libs">
-            <Time />
             <Weather lat={lat} lng={lng} />
+            <Time />
           </section>
           <Footer />
           <Switch>

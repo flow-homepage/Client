@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 export default class Weather extends Component {
   static propTypes = {
     lat: PropTypes.number,
-    lng: PropTypes.number
+    lng: PropTypes.number,
   };
   constructor(props) {
     super(props);
@@ -23,16 +23,16 @@ export default class Weather extends Component {
   async componentDidMount() {
     const { lat, lng } = this.props;
     const res = await axios.get(
-      `https://flowhome-server.herokuapp.com/api/weather`, { 
+      `https://flowhome-server.herokuapp.com/api/weather`,
+      {
         params: {
           lat,
-          lng
-
-        }
+          lng,
+        },
       }
     );
     this.setState({
-      weather: `${res.data.temperature}°F`,
+      weather: `${Math.round(res.data.temperature)}°F`,
       summary: res.data.summary,
     });
 
@@ -43,9 +43,9 @@ export default class Weather extends Component {
     const { weather, summary } = this.state;
     return (
       <React.Fragment>
-        <h1 className="weather">
+        <div className="weather">
           {weather} {summary}
-        </h1>
+        </div>
       </React.Fragment>
     );
   }
