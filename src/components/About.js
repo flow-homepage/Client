@@ -12,35 +12,35 @@ export default class About extends Component {
       ivy: false,
       cody: false,
       andre: false,
-      dean: false
+      dean: false,
     };
   }
 
   componentDidMount = () => {
     ReactModal.setAppElement('body');
-  }
+  };
 
   toggleIvy = () => {
     this.setState(state => ({
-      ivy: !state.ivy
+      ivy: !state.ivy,
     }));
   };
 
   toggleCody = () => {
     this.setState(state => ({
-      cody: !state.cody
+      cody: !state.cody,
     }));
   };
 
   toggleAndre = () => {
     this.setState(state => ({
-      andre: !state.andre
+      andre: !state.andre,
     }));
   };
 
   toggleDean = () => {
     this.setState(state => ({
-      dean: !state.dean
+      dean: !state.dean,
     }));
   };
 

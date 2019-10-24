@@ -46,8 +46,8 @@ class App extends Component {
           <Background />
           <Header />
           <section className="libs">
-            <Time />
             <Weather lat={lat} lng={lng} />
+            <Time />
           </section>
           <Switch>
             <Route path="/" exact component={Home} />
