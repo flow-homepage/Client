@@ -50,7 +50,6 @@ export default class About extends Component {
         <h1 className="title">Who's That Developer?</h1>
         <div id="team">
           {/* add spans to style with images */}
-<<<<<<< HEAD
           <div
             className="buttonImage"
             onClick={this.toggleIvy}
@@ -101,28 +100,15 @@ export default class About extends Component {
             onRequestClose={this.toggleDean}
             className="modal"
           >
-=======
-          <div className="buttonImage" onClick={this.toggleIvy} alt="" id="ivy" />
-          <ReactModal isOpen={this.state.ivy} onRequestClose={this.toggleIvy} className="modal">
-            <Ivy />
-          </ReactModal>
-          <div className="buttonImage" onClick={this.toggleCody} alt="" id="cody" />
-          <ReactModal isOpen={this.state.cody} onRequestClose={this.toggleCody} className="modal">
-            <Cody />
-          </ReactModal>
-          <div className="buttonImage" onClick={this.toggleAndre} alt="" id="andre" />
-          <ReactModal isOpen={this.state.andre} onRequestClose={this.toggleAndre} className="modal">
-            <Andre />
-          </ReactModal>
-          <div className="buttonImage" onClick={this.toggleDean} alt="" id="dean" />
-          <ReactModal isOpen={this.state.dean} onRequestClose={this.toggleDean} className="modal">
->>>>>>> Staging
             <Dean />
           </ReactModal>
         </div>
         <div className="contact">
           <p>Contact Us! </p>
-          <a href="mailto: team@flowhome.us" aria-label="Link to email us"> 📧 Email</a>
+          <a href="mailto: team@flowhome.us" aria-label="Link to email us">
+            {' '}
+            📧 Email
+          </a>
         </div>
       </>
     );

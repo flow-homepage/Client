@@ -7,7 +7,9 @@ export default class Background extends Component {
     super(props);
     this.rootRef = React.createRef();
     this.state = {
-      // background: [],
+      maker: '',
+      makerUrl: '',
+      location: '',
     };
   }
 
@@ -15,6 +17,12 @@ export default class Background extends Component {
     const res = await axios.get(
       `https://flowhome-server.herokuapp.com/api/background`
     );
+
+    this.setState({
+      maker: res.data.user.name,
+      makerUrl: `${res.data.user.links.html}?utm_source=flow_homepage&utm_medium=referral`,
+      location: res.data.user.location,
+    });
 
     const backgroundDiv = this.rootRef.current;
     backgroundDiv.style.backgroundImage = `linear-gradient(rgba(36, 51, 91, 0.5), rgba(36, 51, 91, 0.5)), url('${res.data.urls.regular}')`;
@@ -25,6 +33,24 @@ export default class Background extends Component {
     // this.photoCredits.href = `${res.data.user.links.html}?utm_source=flow_homepage&utm_medium=referral`;
   }
   render() {
-    return <div ref={this.rootRef} className="bg" />;
+    return (
+      <React.Fragment>
+        <div ref={this.rootRef} className="bg" />
+        <div className="credits">
+          Photo of {''} {this.state.location} {''} by {''}
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href={this.state.makerUrl}
+          >
+            {this.state.maker}
+          </a>
+          {''} on {''}
+          <a href="https://unsplash.com?utm_source=flow_homepage&utm_medium=referral">
+            Unsplash
+          </a>
+        </div>
+      </React.Fragment>
+    );
   }
 }
