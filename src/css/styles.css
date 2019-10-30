@@ -4,7 +4,7 @@
 @import "./variables.css";
 @import "./modal.css";
 @import "./about.css";
-@import "./signup.css";
+@import "./forms.css";
 @import "./background.css";
 html {
   font-size: 2.8vmin;
@@ -35,7 +35,9 @@ h2 {
   font-size: 3rem;
   font-weight: bold;
   font-family: "Marck Script", cursive;
+  padding: 0.5rem;
 }
+
 .logoImg {
   display: block;
   width: 3rem;
@@ -56,13 +58,42 @@ h2 {
     "tabs button";
   grid-column-gap: 1rem;
   width: 95vw;
+  padding: 5vh;
 }
 
 .tabWidget h2 {
   grid-area: title;
 }
 
-.tabWidget button {
+.categoryTabs {
+  padding-bottom: 1%;
+}
+
+.categoryTabs input[type="radio"] {
+  opacity: 0;
+  width: 0;
+}
+
+.categoryTabs label {
+  background-color: hsl(224, 43%, 25%);
+  padding: 10px 20px;
+  font-size: 2.8vmin;
+  font-family: "Nunito Sans", sans-serif;
+  color: hsl(224, 43%, 90%);
+  border: 1px solid rgba(0, 0, 0, 0);
+  border-radius: 10px 10px 0 0;
+}
+
+.categoryTabs label:hover {
+  border: 1px solid hsl(224, 43%, 90%);
+}
+
+.categoryTabs input[type="radio"]:checked + label {
+  background-color: #cc457d;
+  border-color: #ff958c;
+}
+
+#expandButton {
   height: 3rem;
   width: 3rem;
   border: none;
@@ -75,7 +106,8 @@ h2 {
   grid-area: button;
   align-self: start;
 }
-.tabWidget button.expanded {
+
+#expandButton.expanded {
   background: url(/img/collapse.png) no-repeat;
   background-size: 100% 50%;
   background-position: center;
@@ -169,34 +201,43 @@ footer {
   padding: 5px;
 }
 
-footer #credits {
-  position: absolute;
-  bottom: 8px;
-  left: 16px;
+footer .credits {
+  position: relative;
+  left: 10px;
+  margin-left: 0.5rem;
+  top: 20px;
+  width: 50%;
 }
-footer #credits a {
+
+footer .credits a {
   text-decoration: none;
 }
 
-.footer {
+footer {
   text-align: center;
   padding: 5px;
 }
 
 /* footer link highlight */
 
-.footer:visited,
-.footer:active,
-.footer:link {
+footer .navroute a:visited,
+footer.navroute a:active,
+footer.navroute a:link {
   color: hsl(224, 43%, 90%);
   text-decoration: none;
 }
 
-.footer:hover {
+footer .navroute a:hover {
   cursor: pointer;
 }
 
-.footer {
+footer .navroute a {
+  text-decoration: none;
+  color: var(--work-white);
+  padding: 1%;
+}
+
+footer .navroute a {
   background: linear-gradient(
     to right,
     var(--work-orange) 45%,
@@ -207,7 +248,8 @@ footer #credits a {
   color: var(--snips-white);
   transition: all 0.2s linear;
 }
-.footer:hover {
+
+footer .navroute :hover {
   background-position: left bottom;
   transition: all 0.2s linear;
 }
@@ -216,4 +258,27 @@ footer #credits a {
   text-decoration: none;
   outline: none;
   color: hsl(224, 43%, 90%);
+}
+
+.hidden {
+  display: none;
+}
+
+.time {
+  position: absolute;
+  top: 30px;
+  right: 55px;
+  padding: 10px;
+  margin: 10px;
+  font-size: 2.8vmin;
+  font-family: "Nunito Sans", sans-serif;
+}
+
+.weather {
+  position: absolute;
+  right: 160px;
+  top: 20px;
+  font-size: 3.5vmin;
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: bolder;
 }

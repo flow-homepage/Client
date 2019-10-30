@@ -1,9 +1,8 @@
 import React, { Component } from 'react'
-
 export default class Signup extends Component {
     render() {
         return (
-            <form>
+            <form id="signup-login">
             <h3>Sign Up</h3><br/>
             <div class="group">      
               <input type="text" required />
