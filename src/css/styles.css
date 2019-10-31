@@ -282,9 +282,10 @@ footer .navroute :hover {
 }
 
 .credits {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.822);
   position: fixed;
   bottom: 0.5rem;
   text-decoration: none;
-  width: 50%;
+  width: 2vh 2vw;
   padding: 5px;
 }
