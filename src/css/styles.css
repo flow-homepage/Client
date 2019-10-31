@@ -197,7 +197,7 @@ footer {
   bottom: 5px;
   right: 5px;
   text-align: right;
-  width: 100%;
+  width: 50%;
   padding: 5px;
 }
 
@@ -207,10 +207,8 @@ footer .credits {
   margin-left: 0.5rem;
   top: 20px;
   width: 50%;
-}
-
-footer .credits a {
-  text-decoration: none;
+  font-size: 2.5vmin;
+  font-family: "Nunito Sans", sans-serif;
 }
 
 footer {
@@ -281,4 +279,12 @@ footer .navroute :hover {
   font-size: 3.5vmin;
   font-family: "Nunito Sans", sans-serif;
   font-weight: bolder;
+}
+
+.credits {
+  position: fixed;
+  bottom: 0.5rem;
+  text-decoration: none;
+  width: 50%;
+  padding: 5px;
 }
