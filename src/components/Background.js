@@ -20,7 +20,7 @@ export default class Background extends Component {
     this.setState({
       maker: res.data.user.name,
       makerUrl: `${res.data.user.links.html}?utm_source=flow_homepage&utm_medium=referral`,
-      location: res.data.user.location,
+      location: res.data.location.name,
     });
 
     const backgroundDiv = this.rootRef.current;
@@ -36,7 +36,7 @@ export default class Background extends Component {
       <React.Fragment>
         <div ref={this.rootRef} className="bg" />
         <div className="credits">
-          Photo of {''} {this.state.location} {''} by {''}
+           {''} {this.state.location}{''} Shot by {''}
           <a
             target="_blank"
             rel="noopener noreferrer"
