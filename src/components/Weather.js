@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import PropTypes from 'prop-types';
-
 export default class Weather extends Component {
   static propTypes = {
     lat: PropTypes.number,
@@ -23,7 +22,7 @@ export default class Weather extends Component {
   async componentDidMount() {
     const { lat, lng } = this.props;
     const res = await axios.get(
-      `https://flowhome-server.herokuapp.com/api/weather`,
+      `${process.env.REACT_APP_URL}/weather`,
       {
         params: {
           lat,
