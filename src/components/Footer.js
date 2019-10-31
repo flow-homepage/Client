@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
-
+const { REACT_APP_URL } = process.env;
 export default class Footer extends Component {
   static propTypes = {};
   constructor(props) {
@@ -15,7 +15,7 @@ export default class Footer extends Component {
 
   async componentDidMount() {
     const res = await axios.get(
-      `https://flowhome-server.herokuapp.com/api/background`
+      `${REACT_APP_URL}/background`
     );
 
     this.setState({
