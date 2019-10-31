@@ -20,11 +20,11 @@
 - **Time**
   - This application provides time according to your timezone.
 - **Weather**
-  - This application provides the weather according to your location
+  - This application provides the weather according to your location.
 
 ### Future Implementation:
 
-- Allow the users have their own categories
+- Allow the users have their own categories.
 - Quotes that can motivate / inspire users.
 - Implementing an AI to best categorize the user's history.
 - Removal of unwanted tab from the history.
