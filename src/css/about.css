@@ -1,0 +1,26 @@
+@import "reset.css";
+@import "/styles/styles.css";
+@import "/styles/pictures.css";
+@import "/styles/modal.css";
+@import "/styles/signup.css";
+
+.title {
+  text-align: center;
+}
+
+.contact {
+  display: inline-flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  margin: 1rem;
+}
+
+.contact a:active, .contact a:visited, .contact a:link {
+  color: hsl(224, 43%, 90%);
+  text-decoration: none;
+}
+
+.contact a:hover {
+  cursor: pointer;
+}

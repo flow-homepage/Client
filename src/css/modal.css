@@ -1,0 +1,78 @@
+#team {
+  margin-top: 10vh;
+  display: grid;
+  grid-template-columns: repeat(4, 20vw);
+  place-content: space-evenly;
+  place-items: center;
+  grid-template-rows: 50vh;
+}
+
+.buttonImage {
+  width: 100px;
+  height: 100px;
+  display: none;
+  list-style-type: none;
+  background-color: hsl(224, 43%, 25%);
+  border-radius: 25px;
+  color: #fff;
+  display: grid;
+  align-items: start;
+  justify-content: stretch;
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+  border: 10px solid hsl(224, 43%, 25%);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.6);
+}
+.buttonImage:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.6);
+  cursor: pointer;
+}
+#ivy {
+  background: url(/img/ivyimg.png);
+  background-position: 40% 40%;
+  background-size: 16rem;
+}
+
+#cody {
+  background: url(/img/codymain.jpg);
+  background-position: 55% 15%;
+  background-size: 16rem;
+}
+#andre {
+  background: url(/img/andremain.jpg);
+  background-position: 43% 35%;
+  background-size: 16rem;
+}
+#dean {
+  background: url(/img/deanmain.jpg);
+  background-position: 43% 50%;
+  background-size: 16rem;
+}
+
+.modal {
+  position: relative;
+  background: #cc457d;
+  border-radius: 10px;
+  box-sizing: 0 3px 15px rgba(0, 0, 0, 0.5);
+  display: grid;
+  grid-auto-columns: 1fr;
+  justify-content: center;
+  align-items: center;
+  font-family: "Helvetica", "Segoe UI Light", sans-serif;
+  font-weight: lighter;
+  text-align: center;
+  list-style: none;
+  margin: 10vh;
+  margin-left: 15vw;
+  margin-right: 15vw;
+  padding-top: 2vh;
+  padding-bottom: 2vh;
+  padding-left: 2vw;
+  padding-right: 2vw;
+}
+.modal ul li {
+  list-style: none;
+  padding: 10px;
+  font-size: 20px;
+}

@@ -17,6 +17,7 @@
     <!-- JS imports -->
     <script defer src="./jsFiles/time.js" type="text/javascript"></script>
     <script defer src="./jsFiles/expand.js" type="text/javascript"></script>
+    <script defer src="./jsFiles/radio.js" type="text/javascript"></script>
     <!-- API imports -->
     <script
       src="./utils/weatherAPI.js"
@@ -43,14 +44,40 @@
     <main>
       <section>
         <div class="tabWidget">
-          <h2>
-            Recently Closed Tabs
+          <h2 class="categoryTabs">
+            <input
+              type="radio"
+              id="radioUncategorized"
+              name="radioCategories"
+              value="Uncategorized"
+              onclick="handleCategoryRadio()"
+              checked
+            />
+            <label for="radioUncategorized">Uncategorized</label>
+
+            <input
+              type="radio"
+              id="radioWork"
+              name="radioCategories"
+              value="Work"
+              onclick="handleCategoryRadio()"
+            />
+            <label for="radioWork">Work</label>
+
+            <input
+              type="radio"
+              id="radioHome"
+              name="radioCategories"
+              value="Home"
+              onclick="handleCategoryRadio()"
+            />
+            <label for="radioHome">Home</label>
           </h2>
           <div id="recentTabs" class="recentTabs">
             <a
+              class="recentTab"
               target="_blank"
               href="https://chrome.google.com/webstore/detail/flow-homepage-helper/jadklcjnechlbblefifkjodppcbckmlg"
-              target="_blank"
             >
               CHROME EXTENSION REQUIRED
             </a>

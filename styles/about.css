@@ -1,9 +1,0 @@
-@import "reset.css";
-@import "/styles/styles.css";
-@import "/styles/pictures.css";
-@import "/styles/modal.css";
-@import "/styles/signup.css";
-
-.title {
-  text-align: center;
-}
