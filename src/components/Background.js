@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+
 export default class Background extends Component {
   static propTypes = {};
   constructor(props) {
