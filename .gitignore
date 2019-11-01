@@ -17,13 +17,12 @@ jspm_packages/
 # Optional npm cache directory
 .npm
 
-
+# build folder
+build/
 
 # Optional REPL history
 .node_repl_history
 
-# build folder
-build/
 
 # dotenv environment variables file
 .env
