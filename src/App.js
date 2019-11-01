@@ -10,6 +10,7 @@ import Background from './components/Background';
 // import Login from './components/Login';
 // import Signup from './components/Signup';
 import Time from './components/Time';
+import FOUROHFOUR from './components/FOUROHFOUR';
 
 class App extends Component {
   constructor(props) {
@@ -54,6 +55,7 @@ class App extends Component {
             {/* <Route path="/signup" exact component={Signup} /> */}
             {/* <Route path="/login" exact component={Login} /> */}
             <Route path="/about" exact component={About} />
+            <Route path="*" component={FOUROHFOUR} />
           </Switch>
           <Footer />
         </Router>
