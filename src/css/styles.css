@@ -1,14 +1,14 @@
-@import url("https://fonts.googleapis.com/css?family=Nunito+Sans&display=swap");
-@import url("https://fonts.googleapis.com/css?family=Marck+Script&display=swap");
-@import "./reset.css";
-@import "./variables.css";
-@import "./modal.css";
-@import "./about.css";
-@import "./forms.css";
-@import "./background.css";
+@import url('https://fonts.googleapis.com/css?family=Nunito+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Marck+Script&display=swap');
+@import './reset.css';
+@import './variables.css';
+@import './modal.css';
+@import './about.css';
+@import './forms.css';
+@import './background.css';
 html {
   font-size: 2.8vmin;
-  font-family: "Nunito Sans", sans-serif;
+  font-family: 'Nunito Sans', sans-serif;
   color: hsl(224, 43%, 90%);
   /* background: linear-gradient(rgba(36, 51, 91, 0.5), rgba(36, 51, 91, 0.5)),
     url(/img/background.jpg);
@@ -34,7 +34,7 @@ h2 {
   align-items: flex-start;
   font-size: 3rem;
   font-weight: bold;
-  font-family: "Marck Script", cursive;
+  font-family: 'Marck Script', cursive;
   padding: 0.5rem;
 }
 
@@ -54,8 +54,8 @@ h2 {
   place-items: center;
   grid-template-columns: 1fr auto;
   grid-template-areas:
-    "title ."
-    "tabs button";
+    'title .'
+    'tabs button';
   grid-column-gap: 1rem;
   width: 95vw;
   padding: 5vh;
@@ -69,7 +69,7 @@ h2 {
   padding-bottom: 1%;
 }
 
-.categoryTabs input[type="radio"] {
+.categoryTabs input[type='radio'] {
   opacity: 0;
   width: 0;
 }
@@ -78,7 +78,7 @@ h2 {
   background-color: hsl(224, 43%, 25%);
   padding: 10px 20px;
   font-size: 2.8vmin;
-  font-family: "Nunito Sans", sans-serif;
+  font-family: 'Nunito Sans', sans-serif;
   color: hsl(224, 43%, 90%);
   border: 1px solid rgba(0, 0, 0, 0);
   border-radius: 10px 10px 0 0;
@@ -88,7 +88,7 @@ h2 {
   border: 1px solid hsl(224, 43%, 90%);
 }
 
-.categoryTabs input[type="radio"]:checked + label {
+.categoryTabs input[type='radio']:checked + label {
   background-color: #cc457d;
   border-color: #ff958c;
 }
@@ -136,7 +136,7 @@ h2 {
 
 #recentTabs > a.recentTab {
   width: 26%;
-  height: 5vh;
+  height: 2rem;
   border-radius: 10px;
   margin-bottom: 2vh;
   text-align: center;
@@ -148,7 +148,7 @@ h2 {
   text-decoration: none;
   color: hsl(224, 43%, 25%);
   background-color: hsl(224, 43%, 96%);
-  padding: 0.5rem 0.5rem 0rem 0.5rem;
+  padding: 0.25rem 0.5rem 0rem 0.5rem;
   box-shadow: 0.25rem 0.25rem 0.25rem rgba(0, 0, 0, 0.4);
   border: 1px solid rgba(0, 0, 0, 0);
 }
@@ -208,7 +208,7 @@ footer .credits {
   top: 20px;
   width: 50%;
   font-size: 2.5vmin;
-  font-family: "Nunito Sans", sans-serif;
+  font-family: 'Nunito Sans', sans-serif;
 }
 
 footer {
@@ -269,7 +269,7 @@ footer .navroute :hover {
   padding: 10px;
   margin: 10px;
   font-size: 2.8vmin;
-  font-family: "Nunito Sans", sans-serif;
+  font-family: 'Nunito Sans', sans-serif;
 }
 
 .weather {
@@ -277,7 +277,7 @@ footer .navroute :hover {
   right: 160px;
   top: 20px;
   font-size: 3.5vmin;
-  font-family: "Nunito Sans", sans-serif;
+  font-family: 'Nunito Sans', sans-serif;
   font-weight: bolder;
 }
 
