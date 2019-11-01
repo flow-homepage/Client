@@ -89,16 +89,17 @@ export default class BrowserHistory extends Component {
         <div
           id="recentTabs"
           className={`${this.state.expand ? 'expanded' : ''}`}
-        />
-        <button id="expandButton" onClick={this.toggleExpand} />
-
-        {/* <a
-          target="blank"
-          // target="noopener noreferrer"
-          href="https://chrome.google.com/webstore/detail/flow-homepage-helper/jadklcjnechlbblefifkjodppcbckmlg"
         >
-          CHROME EXTENSION REQUIRED
-        </a> */}
+          <a
+            class="recentTab"
+            href="https://chrome.google.com/webstore/detail/flow-homepage-helper/jadklcjnechlbblefifkjodppcbckmlg"
+            target="_blank"
+            style={{ width: '75%' }}
+          >
+            DOWNLOAD CHROME EXTENSION
+          </a>
+        </div>
+        <button id="expandButton" onClick={this.toggleExpand} />
       </div>
     );
   }
