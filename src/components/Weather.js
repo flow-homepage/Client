@@ -44,7 +44,6 @@ export default class Weather extends Component {
               },
             }
             );
-            console.log('the request', res);
             // } else {
             //   // error
             //   // request location here
@@ -55,7 +54,6 @@ export default class Weather extends Component {
           //for adding icons later
           // icon: '',
         });
-        console.log(this.state.icon);
         
         }
         );
