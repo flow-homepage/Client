@@ -16,8 +16,7 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      lat: 0,
-      lng: 0,
+     
     };
   }
   // lat: 34.0522,
@@ -45,14 +44,14 @@ class App extends Component {
 
 
   render() {
-    const { lat, lng } = this.state;
+ 
     return (
       <>
         <Router>
           <Background />
           <Header />
           <section className="libs">
-            <Weather lat={lat} lng={lng} />
+            <Weather />
             <Time />
           </section>
           <Switch>
