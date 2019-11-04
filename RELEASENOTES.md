@@ -4,7 +4,7 @@
 
 # What is Flow?
 
-- Flow is an application that intends to be an alternative homepage for chrome where a user can keep track of their history without having to look for it. ![Flow](./public/img/FlowAlphaMain.jpg)
+- Flow is an application that intends to be an alternative homepage for chrome where a user can keep track of their history without having to look for it. ![Flow](./public/img/FlowAlphaMain.png)
 
 ### What works:
 
