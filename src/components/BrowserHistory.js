@@ -91,9 +91,10 @@ export default class BrowserHistory extends Component {
           className={`${this.state.expand ? 'expanded' : ''}`}
         >
           <a
-            class="recentTab"
+            className="recentTab"
             href="https://chrome.google.com/webstore/detail/flow-homepage-helper/jadklcjnechlbblefifkjodppcbckmlg"
             target="_blank"
+            rel="noopener noreferrer"
             style={{ width: '75%' }}
           >
             DOWNLOAD CHROME EXTENSION
