@@ -8,10 +8,12 @@ export default class Weather extends Component {
   };
   constructor(props) {
     super(props);
-
+    
     this.state = {
       weather: '',
       summary: '',
+      latitude: 0,
+      longitude: 0
     };
   }
 
@@ -19,25 +21,42 @@ export default class Weather extends Component {
    * This function grabs the weather from our server
    * and sets it on our front end
    */
-  async componentDidMount() {
-    const { lat, lng } = this.props;
-    const res = await axios.get(
-      `${process.env.REACT_APP_URL}/weather`,
-      {
-        params: {
-          lat,
-          lng,
-        },
-      }
-    );
-    this.setState({
-      weather: `${Math.round(res.data.temperature)}°F`,
-      summary: res.data.summary,
-    });
 
-    // tick function
-    // update every hour
+  async componentDidMount() {
+        // if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(this.displayLocationInfo);
+        // } else {
+        //   // error
+        //   // request location here
+        // }
+        const res = await axios.get(
+          `${process.env.REACT_APP_URL}/weather`,
+          {
+            params: {
+              lat: this.state.latitude,
+              lng: this.state.longitude,
+            },
+          }
+          );
+      this.setState({
+        weather: `${Math.round(res.data.temperature)}°F`,
+        summary: res.data.summary,
+      });
+      
+      // tick function
+      // update every hour
+    }
+  
+
+  displayLocationInfo = position => {
+    this.setState({
+      latitude:position.coords.latitude,
+      longitude:position.coords.longitude
+    });
+  
   }
+  
+  
   render() {
     const { weather, summary } = this.state;
     return (
