@@ -15,7 +15,7 @@ export default class BrowserHistory extends Component {
     this.state = {
       expand: false,
       extension: false,
-      checked: `radio${initialCategory}`
+      checked: `radio${initialCategory}`,
     };
   }
   /**
@@ -24,7 +24,7 @@ export default class BrowserHistory extends Component {
    */
   toggleExpand = () => {
     this.setState(state => ({
-      expand: !state.expand
+      expand: !state.expand,
     }));
   };
   //   hasExtension = () => {
@@ -33,7 +33,7 @@ export default class BrowserHistory extends Component {
 
   handleCategoryRadio = changeEvent => {
     this.setState({
-      checked: changeEvent.target.id
+      checked: changeEvent.target.id,
     });
 
     localStorage.setItem('category', changeEvent.target.value);
