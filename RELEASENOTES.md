@@ -4,7 +4,7 @@
 
 # What is Flow?
 
-- Flow is an application that intends to be an alternative homepage for chrome where a user can keep track of their history without having to look for it.
+- Flow is an application that intends to be an alternative homepage for chrome where a user can keep track of their history without having to look for it. ![Flow](./public/img/FlowAlphaFrontPage.png)
 
 ### What works:
 
@@ -14,13 +14,13 @@
 
 - **Tab Management**
   - The chrome extension keeps track of your history as soon as you close your tab.
-  - The history that was captured can be seen in the category section at your homepage.
+  - The history that was captured can be seen in the category section at your homepage. ![Tab](./public/img/FlowAlphaTabManagement.jpg)
 - **Background brought to you by unsplash**
-  - Enjoy a fresh set of background everytime you refresh the application.
+  - Enjoy a fresh set of background everytime you refresh the application. ![BG](./public/img/FlowAlphaMoreTabs.PNG)
 - **Time**
-  - This application provides time according to your timezone.
+  - This application provides time according to your timezone.![Time](./public/img/FlowAlphaTime.jpg)
 - **Weather**
-  - This application provides the weather according to your location.
+  - This application provides the weather according to your location. ![Weather](./public/img/FlowAlphaWeather.jpg)
 
 ### Future Implementation:
 
@@ -28,5 +28,8 @@
 - Quotes that can motivate / inspire users.
 - Implementing an AI to best categorize the user's history.
 - Removal of unwanted tab from the history.
+- Adding more Categories.
+- Allowing users to sync tabs across different computers.
+- Profiles
 
 ### BUGS:
