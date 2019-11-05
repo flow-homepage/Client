@@ -12,14 +12,14 @@
 
   - This chrome extension plays in tandem with our application and is available for the users. This [Flow Homepage Helper](https://chrome.google.com/webstore/detail/flow-homepage-helper/jadklcjnechlbblefifkjodppcbckmlg) will provide the useful features of our application.
 
-- **_Tab Management_** #1
+- **_Tab Management_** # 1
   - The chrome extension keeps track of your history as soon as you close your tab.
   - The history that was captured can be seen in the category section at your homepage. 
-- **Background brought to you by unsplash** #96
+- **Background brought to you by unsplash** # 96
   - Enjoy a fresh set of background everytime you refresh the application. 
-- **Time** #57
+- **Time** # 57
   - This application provides time according to your timezone.
-- **Weather** #57
+- **Weather** # 57
   - This application provides the weather according to your location. 
 
 ### **_Future Implementation_**:
