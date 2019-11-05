@@ -2,11 +2,11 @@
 
 ### FLOW 2019 VERSION 1.0
 
-# What is Flow?
+# **_Overview_**
 
-- Flow is an application that intends to be an alternative homepage for chrome where a user can keep track of their history without having to look for it. ![Flow](./public/img/FlowAlphaMain.png)
+- Flow is an application that intends to be an alternative homepage for chrome where a user can keep track of their history without having to look for it. 
 
-### What works:
+### **_Feature List_**:
 
 - **Chrome Extension**
 
@@ -14,13 +14,13 @@
 
 - **Tab Management**
   - The chrome extension keeps track of your history as soon as you close your tab.
-  - The history that was captured can be seen in the category section at your homepage. ![Tab](./public/img/FlowAlphaTabManagement.jpg)
+  - The history that was captured can be seen in the category section at your homepage. 
 - **Background brought to you by unsplash**
-  - Enjoy a fresh set of background everytime you refresh the application. ![BG](./public/img/FlowAlphaMoreTabs.PNG)
+  - Enjoy a fresh set of background everytime you refresh the application. 
 - **Time**
-  - This application provides time according to your timezone.![Time](./public/img/FlowAlphaTime.jpg)
+  - This application provides time according to your timezone.
 - **Weather**
-  - This application provides the weather according to your location. ![Weather](./public/img/FlowAlphaWeather.jpg)
+  - This application provides the weather according to your location. 
 
 ### Future Implementation:
 
@@ -33,5 +33,3 @@
 - Profiles
 
 ### BUGS:
-
-- We have to make the logo a tag because
