@@ -2,27 +2,27 @@
 
 ### FLOW 2019 VERSION 1.0
 
-# What is Flow?
+# **_Overview_**
 
-- Flow is an application that intends to be an alternative homepage for chrome where a user can keep track of their history without having to look for it. ![Flow](./public/img/FlowAlphaMain.png)
+- Flow is an application that intends to be an alternative homepage for chrome where a user can keep track of their history without having to look for it. 
 
-### What works:
+### **_Feature List_**:
 
 - **Chrome Extension**
 
   - This chrome extension plays in tandem with our application and is available for the users. This [Flow Homepage Helper](https://chrome.google.com/webstore/detail/flow-homepage-helper/jadklcjnechlbblefifkjodppcbckmlg) will provide the useful features of our application.
 
-- **Tab Management**
+- **_Tab Management_** # 1
   - The chrome extension keeps track of your history as soon as you close your tab.
-  - The history that was captured can be seen in the category section at your homepage. ![Tab](./public/img/FlowAlphaTabManagement.jpg)
-- **Background brought to you by unsplash**
-  - Enjoy a fresh set of background everytime you refresh the application. ![BG](./public/img/FlowAlphaMoreTabs.PNG)
-- **Time**
-  - This application provides time according to your timezone.![Time](./public/img/FlowAlphaTime.jpg)
-- **Weather**
-  - This application provides the weather according to your location. ![Weather](./public/img/FlowAlphaWeather.jpg)
+  - The history that was captured can be seen in the category section at your homepage. 
+- **Background brought to you by unsplash** # 96
+  - Enjoy a fresh set of background everytime you refresh the application. 
+- **Time** # 57
+  - This application provides time according to your timezone.
+- **Weather** # 57
+  - This application provides the weather according to your location. 
 
-### Future Implementation:
+### **_Future Implementation_**:
 
 - Allow the users have their own categories.
 - Quotes that can motivate / inspire users.
@@ -34,4 +34,6 @@
 
 ### BUGS:
 
-- We have to make the logo a tag because
+
+
+
