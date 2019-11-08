@@ -14,9 +14,7 @@ export default class Background extends Component {
   }
 
   async componentDidMount() {
-    const res = await axios.get(
-      `${process.env.REACT_APP_URL}/background`
-    );
+    const res = await axios.get(`${process.env.REACT_APP_URL}/background`);
 
     this.setState({
       maker: res.data.user.name,
@@ -37,7 +35,8 @@ export default class Background extends Component {
       <React.Fragment>
         <div ref={this.rootRef} className="bg" />
         <div className="credits">
-           {''} {this.state.location}{''} Shot by {''}
+          {''} {this.state.location}
+          {''} Shot by {''}
           <a
             target="_blank"
             rel="noopener noreferrer"
