@@ -9,6 +9,8 @@ export default class Footer extends Component {
             {/* <Link to="signup">Sign Up</Link> */}
             {/* <Link to="login">Log In</Link> */}
             <Link to="about">About Us</Link>
+            <a href="mailto: team@flowhome.us" aria-label="Link to email us">Contact Us</a>
+            <a href="https://forms.gle/NNhNxEVXd5UyB85CA" target="blank" aria-label="Link to feedback form">Feedback</a>
           </nav>
         </footer>
       </>
