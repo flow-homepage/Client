@@ -8,7 +8,7 @@ export default class LocationModal extends Component {
 
   geolocation = () => {
     if (navigator.geolocation) this.props.getCurrentPosition();
-  }
+  };
 
   render() {
     return (
