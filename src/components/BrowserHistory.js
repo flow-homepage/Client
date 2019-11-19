@@ -15,16 +15,17 @@ export default class BrowserHistory extends Component {
     this.state = {
       expand: false,
       extension: false,
-      checked: `radio${initialCategory}`,
+      checked: `radio${initialCategory}`
     };
   }
+
   /**
    * This function allows you the expand and close
    * the recent closed tabs
    */
   toggleExpand = () => {
     this.setState(state => ({
-      expand: !state.expand,
+      expand: !state.expand
     }));
   };
   //   hasExtension = () => {
@@ -33,7 +34,7 @@ export default class BrowserHistory extends Component {
 
   handleCategoryRadio = changeEvent => {
     this.setState({
-      checked: changeEvent.target.id,
+      checked: changeEvent.target.id
     });
 
     localStorage.setItem('category', changeEvent.target.value);
@@ -59,6 +60,42 @@ export default class BrowserHistory extends Component {
         <h2 className="categoryTabs">
           <input
             type="radio"
+            id="radioFun"
+            name="radioCategories"
+            value="Fun"
+            onChange={this.handleCategoryRadio}
+            checked={this.state.checked === 'radioFun'}
+          />
+          <label htmlFor="radioFun">Fun</label>
+          <input
+            type="radio"
+            id="radioInterest"
+            name="radioCategories"
+            value="Interest"
+            onChange={this.handleCategoryRadio}
+            checked={this.state.checked === 'radioInterest'}
+          />
+          <label htmlFor="radioInterest">Interest</label>
+          <input
+            type="radio"
+            id="radioLife"
+            name="radioCategories"
+            value="Life"
+            onChange={this.handleCategoryRadio}
+            checked={this.state.checked === 'radioLife'}
+          />
+          <label htmlFor="radioLife">Life</label>
+          <input
+            type="radio"
+            id="radioInformation"
+            name="radioCategories"
+            value="Information"
+            onChange={this.handleCategoryRadio}
+            checked={this.state.checked === 'radioInformation'}
+          />
+          <label htmlFor="radioInformation">Information</label>
+          <input
+            type="radio"
             id="radioUncategorized"
             name="radioCategories"
             value="Uncategorized"
@@ -66,25 +103,6 @@ export default class BrowserHistory extends Component {
             checked={this.state.checked === 'radioUncategorized'}
           />
           <label htmlFor="radioUncategorized">Uncategorized</label>
-
-          <input
-            type="radio"
-            id="radioWork"
-            name="radioCategories"
-            value="Work"
-            onChange={this.handleCategoryRadio}
-            checked={this.state.checked === 'radioWork'}
-          />
-          <label htmlFor="radioWork">Work</label>
-          <input
-            type="radio"
-            id="radioHome"
-            name="radioCategories"
-            value="Home"
-            onChange={this.handleCategoryRadio}
-            checked={this.state.checked === 'radioHome'}
-          />
-          <label htmlFor="radioHome">Home</label>
         </h2>
         <div
           id="recentTabs"
@@ -97,7 +115,16 @@ export default class BrowserHistory extends Component {
             rel="noopener noreferrer"
             style={{ width: '75%' }}
           >
-            DOWNLOAD CHROME EXTENSION
+            DOWNLOAD CHROME EXTENSION (MANUAL CATEGORIES)
+          </a>
+          <a
+            className="recentTab"
+            href="https://chrome.google.com/webstore/detail/flow-homepage-helper/nabmfemolponikemcnihifjnopilldfc"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{ width: '75%' }}
+          >
+            DOWNLOAD CHROME EXTENSION (AUTOMATIC CATEGORIES)
           </a>
         </div>
         <button id="expandButton" onClick={this.toggleExpand} />

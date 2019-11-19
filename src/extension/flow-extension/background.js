@@ -48,7 +48,21 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
   return true;
 });
 
-chrome.tabs.onRemoved.addListener(() => {
+let urls = [];
+chrome.tabs.onUpdated.addListener(function(tabId, changeInfo) {
+  if (changeInfo.url) {
+    urls[tabId] = changeInfo.url;
+  }
+});
+
+let closedUrls = {};
+chrome.tabs.onRemoved.addListener(tabID => {
+  let url = urls[tabID];
+
+  if (url) {
+    closedUrls[url] = true;
+  }
+
   chrome.tabs.query(
     { url: ['*://*.flowhome.us/*', '*://localhost/*'] },
     function(tabs) {
@@ -81,7 +95,10 @@ function getTabsFromSessions(sessions, callback) {
         tab = Object.assign({}, tab);
         window = Object.assign({}, window);
         if (tab) {
-          if (!tabs[tab.url]) {
+          if (!tabs[tab.url] || closedUrls[tab.url]) {
+            if (closedUrls[tab.url]) {
+              delete closedUrls[tab.url];
+            }
             tab.time = sessions[i].lastModified;
             tab.category = categoryName;
             tabs[tab.url] = tab;
