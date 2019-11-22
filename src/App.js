@@ -23,11 +23,6 @@ class App extends Component {
     };
   }
 
-//  initializeReactGA = ()=> {
-//   ReactGA.initialize('UA-153142888-1');
-//   ReactGA.pageview('/');
-// };
-
   render() {
  
     return (
