@@ -13,7 +13,7 @@ import Background from './components/Background';
 import Time from './components/Time';
 import FOUROHFOUR from './components/FOUROHFOUR';
 
-ReactGA.initialize('UA-153142888-1');
+ReactGA.initialize(`${process.env.REACT_APP_GA}`);
 ReactGA.pageview(window.location.pathname + window.location.search);
 class App extends Component {
   constructor(props) {
