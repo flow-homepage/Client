@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import ReactGA from 'react-ga';
 import './css/styles.css';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Weather from './components/Weather';
@@ -12,6 +13,8 @@ import Background from './components/Background';
 import Time from './components/Time';
 import FOUROHFOUR from './components/FOUROHFOUR';
 
+ReactGA.initialize('UA-153142888-1');
+ReactGA.pageview(window.location.pathname + window.location.search);
 class App extends Component {
   constructor(props) {
     super(props);
@@ -19,29 +22,11 @@ class App extends Component {
      
     };
   }
-  // lat: 34.0522,
-  // lng: -118.2436,
 
-  // componentDidMount() {
-  //   if (navigator.geolocation) {
-  //     navigator.geolocation.getCurrentPosition(this.displayLocationInfo);
-  //   } else {
-  //     // error
-  //     // request location here
-  //   }
-  // }
-
-  // displayLocationInfo = position => {
-  //     const long = position.coords.longitude;
-  //     const lati = position.coords.latitude;
-     
-  //   this.setState({
-  //     lat:lati,
-  //     lng:long
-  //   });
-  //   console.log(lati,long);
-  // };
-
+//  initializeReactGA = ()=> {
+//   ReactGA.initialize('UA-153142888-1');
+//   ReactGA.pageview('/');
+// };
 
   render() {
  
