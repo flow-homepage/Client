@@ -103,13 +103,6 @@ export default class About extends Component {
             <Dean />
           </ReactModal>
         </div>
-        <div className="contact">
-          <p>Contact Us! </p>
-          <a href="mailto: team@flowhome.us" aria-label="Link to email us">
-            {' '}
-            📧 Email
-          </a>
-        </div>
       </>
     );
   }
